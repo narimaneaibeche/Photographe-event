@@ -1,0 +1,45 @@
+
+
+body {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    background: #FFFFFF;
+    color: #000000;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+    color: #000000;
+}
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+ul{
+    display: flex;  
+    list-style-type:none
+}
+#menu-item-18{
+    margin-right: 60px; 
+}
+#menu-item-19{
+    margin-right: 60px; 
+}
+footer{
+    display: flex;
+    justify-content: center;
+}
+#menu-item-27{
+    margin-right: 60px;
+}
+#menu-item-26{
+margin-right: 60px;
+}
