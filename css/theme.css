@@ -1,7 +1,16 @@
 
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('spacemono-regular-webfont.eot');
+    src: url('spacemono-regular-webfont.eot?#iefi') format('embedded-opentype'),
+    url('spacemono-regular-webfont.woff2') format('woff2'),
+    url('/themes/montheme/fonts/spacemono-regular-webfont.woff') format('woff'),
+    
+    url('spacemono-regular-webfont.svg') format('svg');
+    }
 
 body {
-    font-family: 'Space Mono';
+    font-family: 'Space Mono' ,sans-serif !important;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -58,7 +67,7 @@ margin-right: 60px;
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.548); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.848); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -71,9 +80,14 @@ margin-right: 60px;
     width: 595px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.279),0 6px 20px 0 rgba(0, 0, 0, 0.461);
     -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
+    -webkit-animation-duration: 0.6s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.6s;
+
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.7s;
+    animation-name: animatebottom;
+    animation-duration: 0.7s
 }
 
 /* Add Animation */
@@ -86,27 +100,43 @@ margin-right: 60px;
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
-
-/* The Close Button */
-.close {
-    color: black;
-    width: 30px;
-    height: 30px;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-
+/* Add Animation close */
+@-webkit-keyframes animatebottom {
+    from {bottom:300px; opacity:1} 
+    to {bottom:0; opacity:0}
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+@keyframes animatebottom {
+    from {bottom:300px; opacity:1}
+    to {bottom:0; opacity:0}
+}
+.contact{
+    margin-top: 20px;
 }
 
 .modal-body {
     display: flex;
     justify-content: center;
+    padding-top: 20px;
+}
+
+span input {
+    border-radius: 8px;
+    border: 1px solid #B8BBC2;
+    height: 40px;
+}
+span textarea{
+    border-radius: 8px;
+    border: 1px solid #B8BBC2;
+}
+#wpcf7-f5-o1{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+ input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 2px;
+    border: 1px solid #B8BBC2;
 }
 
