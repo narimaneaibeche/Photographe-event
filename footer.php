@@ -1,5 +1,7 @@
 </div>
+ <?php get_template_part( '/templates_parts/modale' ); ?>
    <?php wp_footer() ?>
+  
    <footer>
          <?php
           wp_nav_menu(
