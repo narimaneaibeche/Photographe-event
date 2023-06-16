@@ -20,6 +20,12 @@ body {
     margin: 0 auto;
     max-width: 1440px;
 }
+h2{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 66px;
+    line-height: 58px;
+}
 
 a:-webkit-any-link {
     text-decoration: none;
@@ -130,11 +136,12 @@ margin-right: 60px;
     padding-top: 20px;
 }
 
-span input {
+span input{
     border-radius: 8px;
     border: 1px solid #B8BBC2;
     height: 40px;
 }
+
 span textarea{
     border-radius: 8px;
     border: 1px solid #B8BBC2;
@@ -149,5 +156,59 @@ span textarea{
     border-radius: 2px;
     border: 1px solid #B8BBC2;
     font-family: 'Space Mono';
+}
+
+/* single page */
+.card{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+   
+}
+.card-img{
+    width: 563px;
+    
+    object-fit:cover;
+}
+.card-txt{
+    margin-right: 40px; 
+    width: 700px;
+    
+ }
+.card-txt p {
+    border-bottom-style: solid; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 58px;
+}
+.card-contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+   
+}
+.card-contact button {
+    height: 50px;
+    width: 272px;
+    background-color: #D8D8D8;
+    font-family:'Space Mono';
+    font-size: 12px;
+    border: 1px solid #B8BBC2;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 250px;
+}
+.row-card1{
+    border-bottom-style: solid; 
+    margin-left: 90px;
+    margin-right: 90px;
+}
+.row-card2{
+    margin-top: 100px;
+    margin-left: 90px;
+    margin-right: 90px;
 }
 

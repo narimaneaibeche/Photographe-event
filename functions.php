@@ -21,9 +21,9 @@ function theme_enqueue_styles() {
 }
 // Chargement du js/script.js pour nos personnalisations
 function add_scripts() {
-    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/script.js', array(), '1.0', true );
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/script.js', array('jquery'), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'add_scripts' );
+add_action( 'wp_footer', 'add_scripts' );
 
 /* nav menu  commence ici */
 function register_my_menu(){
