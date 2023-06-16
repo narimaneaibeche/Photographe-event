@@ -10,7 +10,6 @@
     
 </head>
 <body>
-    <div class='container'>
       <header>
           <nav id="navigation">
                 <?php
@@ -24,5 +23,5 @@
             </nav>
          <a href="http://localhost:8888/photographe-event/"><img src="<?php echo get_template_directory_uri() . '/assets/logo.png'; ?> " class="logo"  alt="logo" ></a>   
       </header>
-   
+    <div class='container'>
     

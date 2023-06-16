@@ -20,6 +20,7 @@ body {
     margin: 0 auto;
     max-width: 1440px;
 }
+
 a:-webkit-any-link {
     text-decoration: none;
     color: #000000;
@@ -29,8 +30,16 @@ header{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    margin-left: 20vh;
-    margin-right: 20vh;
+    height: 80px;
+    width: auto;
+    box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
+   
+}
+header a img{
+    margin-left: 90px;
+}
+#navigation{
+    margin-right: 90px;
 }
 ul{
     display: flex;  
@@ -45,6 +54,7 @@ ul{
 footer{
     display: flex;
     justify-content: center;
+    border-top-style: solid;
 }
 #menu-item-27{
     margin-right: 60px;
@@ -138,5 +148,6 @@ span textarea{
     height: 50px;
     border-radius: 2px;
     border: 1px solid #B8BBC2;
+    font-family: 'Space Mono';
 }
 
