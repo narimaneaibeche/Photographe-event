@@ -1,4 +1,5 @@
 <?php 
+
 function montheme_supports(){
 
    add_theme_support('title-tag');
@@ -101,3 +102,4 @@ function photo_register_taxonomies() {
 }
 
 add_action('init', 'photo_register_taxonomies');
+

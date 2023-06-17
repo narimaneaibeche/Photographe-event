@@ -1,20 +1,25 @@
 <?php
-    $args=array(
+$query = new WP_Query([
+  'post__not_in' => [get_the_ID()],
+  'post_type' => 'photo',
+  'posts_per_page' => 2,
+  
+]);
 
-      'post-type'=> 'post',
-      'posts_per_page' => 2,
+  while ($query->have_posts()) : $query->the_post();
+  
+ 
+  ?>
+  <div class="col-sm-4">
+  
+  <?php the_post_thumbnail()?> 
+  <?php the_content()?> 
+  <?php the_terms(get_the_ID(),'catégorie');?> 
+  <?php the_excerpt() ?>
+  
+  </div>
+  <?php endwhile; 
+  wp_reset_postdata(); ?>
 
-    );
-
-    $my_query = new WP_Query(array('post_type'=> 'post'));
-
-    if($my_query-> have_post()):
-        while($my_query-> have_post()): $my_query->the_post();
-
-             the_post_thumbnail();
-       endwhile;
-   endif;
-   
-wp_reset_postdata();
-
-?>
+</div>
+   </div>

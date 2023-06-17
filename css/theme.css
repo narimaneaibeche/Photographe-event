@@ -25,6 +25,7 @@ h2{
     font-weight: 400;
     font-size: 66px;
     line-height: 58px;
+    font-family: 'Space Mono';
 }
 
 a:-webkit-any-link {
@@ -41,6 +42,7 @@ header{
     box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
    
 }
+
 header a img{
     margin-left: 90px;
 }
@@ -61,12 +63,13 @@ footer{
     display: flex;
     justify-content: center;
     border-top-style: solid;
+    margin-top: 50px;
 }
 #menu-item-27{
     margin-right: 60px;
 }
 #menu-item-26{
-margin-right: 60px;
+   margin-right: 60px;
 }
 #menu-item-29{
     cursor: pointer;
@@ -158,7 +161,9 @@ span textarea{
     font-family: 'Space Mono';
 }
 
-/* single page */
+/* single page 
+<span class="fleche-p"><?php previous_post_link('%link', ' &#x2190'); ?></span>
+               <span class="fleche-s"><?php next_post_link('%link', '&#x2192'); ?></span>*/
 .card{
     display: flex;
     flex-direction: row-reverse;
@@ -166,11 +171,11 @@ span textarea{
     align-items: flex-end;
    
 }
-.card-img{
+/*.card-img{
     width: 563px;
     
     object-fit:cover;
-}
+}*/
 .card-txt{
     margin-right: 40px; 
     width: 700px;
@@ -212,3 +217,43 @@ span textarea{
     margin-right: 90px;
 }
 
+.fleche{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.card-link {
+  width: 600px;
+   
+}  
+.card2-img{
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 50px;
+}
+.card-link figure figure img{
+object-fit: cover;
+height: 300px;
+}
+#btn3{
+    width:272px;
+    height:50px;
+    background-color: #D8D8D8;
+    font-family: 'Space Mono';
+    font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid #B8BBC2;
+    margin: auto;
+    
+    
+}
+.row-card2-photo{
+    display: flex;
+    flex-direction: column;
+}
+.h-plus{
+    margin-bottom: 50px;
+}
