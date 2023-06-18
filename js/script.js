@@ -49,9 +49,19 @@ window.onclick = function(event) {
         modall.style.display = "none";
     }
 }
-// val()
+// récupérer la valeur de la référence 
   $(document).ready(function(){
   
    $('#ref').val($('#refref').text());
 } );
 
+// afficher plus d'image de meme catégorie 
+
+var affichePlus = document.getElementById('publication-list');
+var afficheNon = document.getElementById('card2-img-plus');
+var btnAfficher = document.getElementById('btn3');
+btnAfficher.onclick = function() {
+  affichePlus.style.display = "block";
+  btnAfficher.style.display = "none";
+  afficheNon.style.display = "none";
+}

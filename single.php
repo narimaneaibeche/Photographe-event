@@ -35,9 +35,13 @@
                  <?php 
 				       $prev_post = get_previous_post();
 				        if($prev_post) {
+                      
+
 					        $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
 					        echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" > &#x2190 </a>';
+                       //echo $prev_title;
 					        $prev_post_id = $prev_post->ID;
+                       
 					        if (has_post_thumbnail($prev_post_id)){?>
                   		  <p>
                              <?php echo get_the_post_thumbnail($prev_post->ID, array(81,71));?>
@@ -55,6 +59,8 @@
 				         if($next_post) {
 					         $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
 					         echo  '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" > &#x2192 </a>';
+                        //echo $next_title;
+                        
 					         $next_post_id = $next_post->ID;
                         //echo $next_post_id ; 
 					        if (has_post_thumbnail($next_post_id)){?>					                     
@@ -74,46 +80,74 @@
  <div class="row-card2">
     <h3 class="h-plus">Vous AIMEREZ AUSSI </h3>
 <div class="row-card2-photo">
-   <div class="card2-img">
-    <?php
-      $photos = array_map(function ($term){
-      return $term->term_id;
-      }, get_the_terms(get_post(), 'catégorie'));
-      $query = new WP_Query([
-         'post__not_in' => [get_the_ID()],
-         'post_type' => 'photo',
-         'posts_per_page' => 2,
-         'tax_query'=> [
-         [
+   <div id="card2-img-plus" >
+      <div class="card2-img" >
+         <?php
+          $photos = array_map(function ($term){
+           return $term->term_id;
+           }, get_the_terms(get_post(), 'catégorie'));
+           $query = new WP_Query([
+            'post__not_in' => [get_the_ID()],
+            'post_type' => 'photo',
+            'posts_per_page' => 2,
+            'tax_query'=> [
+            [
              'taxonomy'=> 'catégorie',
              'terms'=> $photos,
-         ]
-         ]
+            ]
+            ]
   
-      ]);
+            ]);?>
+         <?php
+            while ($query->have_posts()) : $query->the_post();
+         ?>
+              <div class="card-link">
+              <?php the_post_thumbnail('post-thumbnail');?> 
+              <?php the_content()?>
+              </div>
+         <?php endwhile; ?>
+    </div>
+ </div>
+ <!-- afficher plus des photo -->
+   <button id="btn3" class="card-link-suite"><a>Toutes les photos </a>  </button>
+   <div id="publication-list">
+      <div  class="pub-list">
+        <?php 
+        $photoss = array_map(function ($term){
+        return $term->term_id;
+        }, get_the_terms(get_post(), 'catégorie'));
+        $query = new WP_Query([ 
+        'post_type' => 'photo',
+        'posts_per_page' => 20,
+        'paged' => 1,
+        'tax_query'=> [
+        [
+        'taxonomy'=> 'catégorie',
+        'terms'=> $photoss,
+     ]
+     ]
+   ]);
+   ?>
 
-      while ($query->have_posts()) : $query->the_post();
-    ?>
-        <div class="card-link">
+    <?php if($query->have_posts()): ?>
+  
+    <?php 
+      while ($query->have_posts()): $query->the_post();
+      ?>
+      
+      <div class="card-link">
            <?php the_post_thumbnail('post-thumbnail');?> 
            <?php the_content()?>
         </div>
-    <?php endwhile; ?>
-   </div>
-   <!-- afficher plus des photo -->
-   <button id="btn3"><a href="<?php the_permalink()?>" class="card-link-suite">Toutes les photos </a>  </button>
-
-
-
-
-
-
-
-
-
-   
-      <?php wp_reset_postdata(); 
+      <?php endwhile;
     ?>
+  </div>
+  </div>
+  
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
+<!--ici on arrete -->
     </div>
   </div>
 </div>

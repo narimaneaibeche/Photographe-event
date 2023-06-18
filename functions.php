@@ -8,7 +8,7 @@ function montheme_supports(){
    add_theme_support('menus');
    register_nav_menu('header', 'En tête de menu');
    register_nav_menu('footer','pied de page');
-   add_image_size('post-thumbnail', 350, 215, true);
+   add_image_size('post-thumbnail', 564, 495, false);
    
 }
 add_action( 'after_setup_theme', 'montheme_supports' );
@@ -103,3 +103,4 @@ function photo_register_taxonomies() {
 
 add_action('init', 'photo_register_taxonomies');
 
+// afficher plus d'image de la meme catégorie
