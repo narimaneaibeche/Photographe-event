@@ -293,3 +293,29 @@ a {
     color: #FE5858;
     
   }
+  /* page d'accueil */
+  .banner{
+    width: 1440px;
+    height: 966px;
+    z-index: -1;
+  }
+  .hero-event{
+    width: 100%;
+    height: auto;
+  }
+  .img-banner{
+    z-index: 9999;
+    position: absolute;
+   
+  }
+  .img-event{
+    width: 1000px;
+    height: 142px;
+    margin: auto;
+  }
+  .hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
