@@ -65,3 +65,10 @@ btnAfficher.onclick = function() {
   btnAfficher.style.display = "none";
   afficheNon.style.display = "none";
 }
+// afficher la pagination d'imager en hover 
+var afficheImg = document.getElementById("nav-img1");
+var hoverFleche = document.getElementById("fleche-ss");
+hoverFleche.onmouseover = function (){
+    afficheImg.style.display = "block";
+    
+}

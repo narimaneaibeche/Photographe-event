@@ -1,6 +1,6 @@
 <?php 
 
-function montheme_supports(){
+/*function montheme_supports(){
 
    add_theme_support('title-tag');
    
@@ -12,7 +12,7 @@ function montheme_supports(){
    
 }
 add_action( 'after_setup_theme', 'montheme_supports' );
-
+*/
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {

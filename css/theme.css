@@ -161,9 +161,8 @@ span textarea{
     font-family: 'Space Mono';
 }
 
-/* single page 
-<span class="fleche-p"><?php previous_post_link('%link', ' &#x2190'); ?></span>
-               <span class="fleche-s"><?php next_post_link('%link', '&#x2192'); ?></span>*/
+/* single page */
+
 .card{
     display: flex;
     flex-direction: row-reverse;
@@ -203,7 +202,7 @@ span textarea{
     border: 1px solid #B8BBC2;
     border-radius: 2px;
     cursor: pointer;
-    margin-right: 250px;
+    
     transition: all 1s ease-out;   
 }
 .card-contact button:hover{
@@ -227,17 +226,49 @@ span textarea{
 .fleche{
     display: flex;
     justify-content: space-between;
+    align-items: center; 
+}
+.cnt{
+    display: flex;
     align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+.navigation{
+    position: relative;
+}
+
+.navigation-fleche{
+    width: 81px;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation-img{
+    display: flex;
     
 }
+.navigation-img1,
+.navigation-img2{
+    width: 81px;
+    height: 71px;
+    
+}
+  .fleche-s:hover {
+   
+   
+  
+}
+
+
 /*la suite des photo*/
 .card-link {
-  width: 620px;
-  height: 551px;
-  object-fit: cover;
-  margin-bottom: 40px;
+    width: 620px;
+   object-fit: cover;
+  }  
+.permalink{
    
-}  
+    height: 551px;
+}
 .card2-img{
     display: flex;
     justify-content: space-between; 

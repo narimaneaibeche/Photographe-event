@@ -25,60 +25,50 @@
             
          </div> 
          <div class="card-contact">
-            <p> Cette photo vous intéresse ? </p>
-            <button id="btn2"> <a>contact </a></button>
-    <?php endwhile ?>
+            <div class="cnt">
+             <div><p> Cette photo vous intéresse ? </p></div>
+              <button id="btn2"> <a>contact </a></button>
+          </div>
+          <?php endwhile ?>
             
               
-              <!-- afficher l'image présedente -->
-             <div class="fleche">
-                 <?php 
-				       $prev_post = get_previous_post();
-				        if($prev_post) {
-                      
-
-					        $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-					        echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" > &#x2190 </a>';
-                       //echo $prev_title;
-					        $prev_post_id = $prev_post->ID;
-                       
-					        if (has_post_thumbnail($prev_post_id)){?>
-                  		  <p>
-                             <?php echo get_the_post_thumbnail($prev_post->ID, array(81,71));?>
-                          </p>
-					 <?php	}
-					        else{
-						          echo "rien";
-					            }
-				         }
-			        ?>
-
-                  <!-- afficher l'image suivante -->
-			        <?php
-				         $next_post = get_next_post();
-				         if($next_post) {
-					         $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-					         echo  '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" > &#x2192 </a>';
-                        //echo $next_title;
-                        
-					         $next_post_id = $next_post->ID;
-                        //echo $next_post_id ; 
-					        if (has_post_thumbnail($next_post_id)){?>					                     
-						        <p><?php echo get_the_post_thumbnail($next_post->ID, array(81,71));?></p>
-					           <?php
-					         }
-					       else{
-						        echo "rien";
-					         }
-				         }
-			         ?>
+          <!-- afficher la navigation -->
+             <div class="navigation">
+                 <div class="navigation-img">
+                     <?php 
+                        $prev_post = get_previous_post();
+                        if($prev_post) {   
+                           $prev_post_id = $prev_post->ID;  ?>                          
+                           <div class="navigation-img1" id="nav-img1">
+                              <?php echo get_post_field('post_content', $prev_post_id);?>
+                           </div>     
+                        <?php
+                        }
+				            $next_post = get_next_post();
+				            if($next_post) {            
+					           $next_post_id = $next_post->ID;?>
+                          <div class="navigation-img2">
+                             <?php echo get_post_field('post_content', $next_post_id); ?>
+                          </div>
+                        <?php
+				            }
+			            ?>
+                 </div>
+                 <div class="navigation-fleche">
+                     <span class="fleche-s" id="fleche-ss">
+                        <?php previous_post_link('%link', ' &#x2190'); ?>
+                    </span>
+                    <span class="fleche-p">
+                       <?php next_post_link('%link', '&#x2192'); ?>
+                    </span>
+                  </div>    
 		       </div>
         </div>   
     </div>
  </div>
    
  <div class="row-card2">
-    <h3 class="h-plus">Vous AIMEREZ AUSSI </h3>
+    <h3 class="h-plus">VOUS AIMEREZ AUSSI </h3>
 <div class="row-card2-photo">
    <div id="card2-img-plus" >
       <div class="card2-img" >
@@ -103,7 +93,7 @@
          ?>
               <div class="card-link">
               <?php the_post_thumbnail('post-thumbnail');?> 
-              <?php the_content()?>
+              <a class="permalink" href= "<?php the_permalink()?>"><?php the_content()?></a>
               </div>
          <?php endwhile; ?>
     </div>
@@ -137,7 +127,7 @@
       
       <div class="card-link">
            <?php the_post_thumbnail('post-thumbnail');?> 
-           <?php the_content()?>
+           <a class="permalink" href= "<?php the_permalink()?>"><?php the_content()?></a>
         </div>
       <?php endwhile;
     ?>
