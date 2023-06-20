@@ -18,13 +18,12 @@ body {
     background: #FFFFFF;
     color: #000000;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 149vh;
 }
 h2{
     font-style: italic;
-    font-weight: 400;
     font-size: 66px;
-    line-height: 58px;
+    line-height: 7vh;
     font-family: 'Space Mono';
 }
 
@@ -37,39 +36,39 @@ header{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 10vh;
     width: auto;
     box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
    
 }
 
 header a img{
-    margin-left: 90px;
+    margin-left: 11vh;
 }
 #navigation{
-    margin-right: 90px;
+    margin-right: 11vh;
 }
 ul{
     display: flex;  
     list-style-type:none
 }
 #menu-item-18{
-    margin-right: 60px; 
+    margin-right: 7vh; 
 }
 #menu-item-19{
-    margin-right: 60px; 
+    margin-right: 7vh; 
 }
 footer{
     display: flex;
     justify-content: center;
     border-top-style: solid;
-    margin-top: 50px;
+    margin-top: 6vh;
 }
 #menu-item-27{
-    margin-right: 60px;
+    margin-right: 7vh;
 }
 #menu-item-26{
-   margin-right: 60px;
+   margin-right: 7vh;
 }
 #menu-item-29{
     cursor: pointer;
@@ -79,7 +78,7 @@ footer{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 11vh; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -95,8 +94,8 @@ footer{
     background-color: #fefefe;
     margin: auto;
     padding: 0;
-    border: 3px solid black;
-    width: 595px;
+    border: 1vh solid black;
+    width: 62vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.279),0 6px 20px 0 rgba(0, 0, 0, 0.461);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.6s;
@@ -111,52 +110,52 @@ footer{
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
+    from {top:-31vh; opacity:0} 
     to {top:0; opacity:1}
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
+    from {top:-31vh; opacity:0}
     to {top:0; opacity:1}
 }
 /* Add Animation close */
 @-webkit-keyframes animatebottom {
-    from {bottom:300px; opacity:1} 
+    from {bottom:31vh; opacity:1} 
     to {bottom:0; opacity:0}
 }
 
 @keyframes animatebottom {
-    from {bottom:300px; opacity:1}
+    from {bottom:31vh; opacity:1}
     to {bottom:0; opacity:0}
 }
 .contact{
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 .modal-body {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 2vh;
 }
 
 span input{
-    border-radius: 8px;
+    border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
-    height: 40px;
+    height: 4vh;
 }
 
 span textarea{
-    border-radius: 8px;
+    border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
 }
 #wpcf7-f5-o1{
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-left: 2vh;
+    padding-top: 2vh;
 }
  input[type="submit"] {
     width: 100%;
-    height: 50px;
-    border-radius: 2px;
+    height: 6vh;
+    border-radius: 0.20vh;
     border: 1px solid #B8BBC2;
     font-family: 'Space Mono';
 }
@@ -171,12 +170,16 @@ span textarea{
    
 }
 .card-img{
-    width: 50%px;
+    width: 102vh;
   
 }
+.card-figure{
+    width: 100%;
+}
+
 .card-txt{
-    margin-right: 40px; 
-    width: 700px;
+   
+    width: 100vh;
     
  }
 .card-txt p {
@@ -190,17 +193,17 @@ span textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 6vh;
    
 }
 .card-contact button {
-    height: 50px;
-    width: 272px;
+    height: 6vh;
+    width: 20vh;
     background-color: #D8D8D8;
     font-family:'Space Mono';
     font-size: 12px;
     border: 1px solid #B8BBC2;
-    border-radius: 2px;
+    border-radius: 0.2vh;
     cursor: pointer;
     
     transition: all 1s ease-out;   
@@ -214,13 +217,13 @@ span textarea{
 }
 .row-card1{
     border-bottom-style: solid; 
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-left: 11vh;
+    margin-right: 11vh;
 }
 .row-card2{
-    margin-top: 100px;
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-top: 11vh;
+    margin-left: 11vh;
+    margin-right: 11vh;
 }
 
 .fleche{
@@ -233,13 +236,14 @@ span textarea{
     align-items: center;
     width: 50%;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .navigation{
     position: relative;
 }
 
 .navigation-fleche{
-    width: 81px;
+    width: 9vh;
     display: flex;
     justify-content: space-between;
 }
@@ -249,36 +253,39 @@ span textarea{
 }
 #nav-img1,
 #nav-img2{
-    width: 81px;
-    height: 71px;
+    width: 9vh;
+    height: 8vh;
    display: none;
     
 }
+#fleche-ss, #fleche-pp{
+    font-size: 25px;
+    
+}
  
-
-
 /*la suite des photo*/
 .card-link {
-    width: 620px;
+    width: 62vh;
    object-fit: cover;
   }  
 .permalink{
    
-    height: 551px;
+    height: 57vh;
 }
 .card2-img{
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+    flex-wrap: wrap; 
 }
 
 #btn3{
-    width:272px;
-    height:50px;
+    width:28vh;
+    height:6vh;
     background-color: #D8D8D8;
     font-family: 'Space Mono';
     font-size: 12px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
     border: 1px solid #B8BBC2;
     margin: auto;
     transition: all 1s ease-out;   
@@ -294,7 +301,7 @@ span textarea{
     flex-direction: column;
 }
 .h-plus{
-    margin-bottom: 50px;
+    margin-bottom: 6vh;
 }
 #publication-list{
     display: none;
@@ -303,7 +310,7 @@ span textarea{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    margin-bottom: 6vh;
 }
 figure{
     height: inherit;
@@ -323,8 +330,8 @@ a {
   }
   /* page d'accueil */
   .banner{
-    width: 1440px;
-    height: 966px;
+    width: 149vh;
+    height: 99vh;
     z-index: -1;
   }
   .hero-event{
@@ -337,8 +344,8 @@ a {
    
   }
   .img-event{
-    width: 1000px;
-    height: 142px;
+    width: 103vh;
+    height: 15vh;
     margin: auto;
   }
   .hero{
@@ -347,8 +354,8 @@ a {
     justify-content: center;
   }
   .liste-photos{
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-left: 11vh;
+    margin-right: 11vh;
   }
   .card2-img2{
     display: flex;
@@ -356,13 +363,13 @@ a {
     justify-content: space-between;
   }
   #btn4{
-    width:272px;
-    height:50px;
+    width:28vh;
+    height:6vh;
     background-color: #D8D8D8;
     font-family: 'Space Mono';
     font-size: 12px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
     border: 1px solid #B8BBC2;
     margin: auto;
     transition: all 1s ease-out;   
@@ -374,16 +381,104 @@ a {
     box-shadow: 0px 4px 19px 8px rgba(249, 124, 124, 0.2);
 }
 .suite-liste{
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-left: 11vh;
+    margin-right: 11vh;
   }
 .liste{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2vh;
 
   }
+  @media screen and (max-width: 600px){
+    .container{
+        display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+   .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .card-img {
+    width: 75vw;
+    
+   }
+   .card-txt {
+    width: 75vw;
+   
+    }
+   h2{
+    font-size: 46px;
+    line-height: 48px;   
+   }
+   p{
+    font-size: 14px;
+    line-height: 21px;
+    
+   }
+   .card-contact{
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+   }
+   .cnt{
+    width: 75vw;
+   }
+   #btn2{
+    width: 60vh;
+    height: 50px;
+   }
+   .navigation{
+    display: none;
+   }
+   .row-card1 {
+    border-bottom-style: solid;
+    /*margin-left: 8vh;
+    margin-right: 8vh;*/
+    display: inline-block;
+   }
+   .row-card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+   }
+   .card-link{
+    width: 75vw;
+   }
+   #btn3{
+    width: 65vw;
+    height: 50px;
+   }
+   .permalink{
+    height: 69vw;
+   }
+   .h-plus {
+    margin-bottom: 2vh;
+   }
+   footer ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+   }
+   footer li{
+    margin-bottom: 2vh;
+   }
+   .modal-content {
+    width: 75vw;
+   }
+   .modal{
+    
+   }
 
+}
 
   
     

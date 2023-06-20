@@ -65,15 +65,22 @@ btnAfficher.onclick = function() {
   btnAfficher.style.display = "none";
   afficheNon.style.display = "none";
 }
-// afficher la pagination d'imager en hover 
+// afficher la pagination d'imager suivante en hover 
 var afficheImg = document.getElementById("nav-img1");
 var hoverFleche = document.getElementById("fleche-ss");
 hoverFleche.onmouseover = function (){
     afficheImg.style.display = "block";   
 }
+hoverFleche.onmouseout = function (){
+    afficheImg.style.display = "none";   
+}
+// afficher la pagination d'imager précédente en hover 
 var afficheImg2 = document.getElementById("nav-img2");
 var hoverFleche2 = document.getElementById("fleche-pp");
 console.log(afficheImg2);
 hoverFleche2.onmouseover = function (){
     afficheImg2.style.display = "block";   
+}
+hoverFleche2.onmouseout = function (){
+    afficheImg2.style.display = "none";   
 }

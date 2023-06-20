@@ -8,8 +8,7 @@
          <div class="card">
             <div class="card-img">
                <img src="<?php the_post_thumbnail('post-thumbnail');?> " alt="" style="width:100%; height:auto;">
-               <span><?php echo  the_post_thumbnail('large');?></span>
-              <span id="ii"> <?php the_content()?> </span>
+              <div class="card-figure"> <?php the_content()?> </div>
             </div>
             <div class="card-txt">
                <h2>
@@ -41,7 +40,7 @@
                         if($prev_post) {   
                            $prev_post_id = $prev_post->ID;  ?>                          
                            <div class="navigation-img1" id="nav-img1">
-                              <?php echo get_post_field('post_content', $prev_post_id);?>
+                             <?php echo get_post_field('post_content', $prev_post_id);?>
                            </div>     
                         <?php
                         }
@@ -58,15 +57,15 @@
                  <div class="navigation-fleche">
                      <span class="fleche-s" id="fleche-ss">
                         <?php previous_post_link('%link', ' &#x2190'); ?>
-                    </span>
+                     </span>
                     <span class="fleche-p" id="fleche-pp" >
                        <?php next_post_link('%link', '&#x2192'); ?>
-                    </span>
+                     </span>
                   </div>    
 		       </div>
         </div>   
     </div>
- </div>
+ 
    
  <div class="row-card2">
     <h3 class="h-plus">VOUS AIMEREZ AUSSI </h3>
