@@ -247,17 +247,14 @@ span textarea{
     display: flex;
     
 }
-.navigation-img1,
-.navigation-img2{
+#nav-img1,
+#nav-img2{
     width: 81px;
     height: 71px;
+   display: none;
     
 }
-  .fleche-s:hover {
-   
-   
-  
-}
+ 
 
 
 /*la suite des photo*/
@@ -335,7 +332,7 @@ a {
     height: auto;
   }
   .img-banner{
-    z-index: 9999;
+    z-index: 1;
     position: absolute;
    
   }

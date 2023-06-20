@@ -8,6 +8,7 @@
          <div class="card">
             <div class="card-img">
                <img src="<?php the_post_thumbnail('post-thumbnail');?> " alt="" style="width:100%; height:auto;">
+               <span><?php echo  the_post_thumbnail('large');?></span>
               <span id="ii"> <?php the_content()?> </span>
             </div>
             <div class="card-txt">
@@ -47,7 +48,7 @@
 				            $next_post = get_next_post();
 				            if($next_post) {            
 					           $next_post_id = $next_post->ID;?>
-                          <div class="navigation-img2">
+                          <div class="navigation-img2" id="nav-img2">
                              <?php echo get_post_field('post_content', $next_post_id); ?>
                           </div>
                         <?php
@@ -58,7 +59,7 @@
                      <span class="fleche-s" id="fleche-ss">
                         <?php previous_post_link('%link', ' &#x2190'); ?>
                     </span>
-                    <span class="fleche-p">
+                    <span class="fleche-p" id="fleche-pp" >
                        <?php next_post_link('%link', '&#x2192'); ?>
                     </span>
                   </div>    
