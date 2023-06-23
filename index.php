@@ -3,16 +3,60 @@
 
 <div class="main">
    <div class="hero">
-       <div class="img-banner">
+      <div class="img-banner">
           <img src="<?php echo get_template_directory_uri() . '/assets/Titre header.png'; ?> " class="img-event"  alt="photographe event" > 
-       </div>
-        <div class="banner">
+      </div>
+      <div class="banner">
            <img src="<?php echo get_template_directory_uri() . '/assets/nathalie-1.jpeg'; ?> " class="hero-event"  alt="image photograpie" > 
-       </div>
-       <div class="input">
-       </div>
+      </div>
+  </div>
 
-    </div>
+
+
+
+  <div>
+   <?php $terms = get_terms('catégorie');?>
+   <?php foreach($terms as $t):?>
+      <a href="<?php echo get_term_link($t->slug,'catégorie');?>"><?php echo $t->name;?></a>
+   <?php endforeach;?>
+</div>
+
+
+
+
+
+
+   <div class="inputs">
+     <div class="input-tax">
+        <div class="input-categorie">
+          <select  name="categorie" id="categorie-select">
+             <?php $terms = get_terms('catégorie');?>
+             <option value="" class="ctg">CATÉGORIE</option>
+             <?php foreach($terms as $t):?>
+             <option value="" ><?php echo $t->name;?></option>
+             <?php endforeach;?> 
+          </select>  
+       </div>
+        <div class="input-format">
+           <select name="format" id="format-select">
+              <?php $terms = get_terms('format');?>
+              <option value="" class="frm">FORMAT</option>
+              <?php foreach($terms as $t):?>
+             <option value="format"><?php echo $t->name;?></option>
+             <?php endforeach;?>
+           </select>  
+        </div>
+      </div>
+      <div class="trier">
+         <div class="input-trier">
+           <select name="trier" id="trier-select">
+             <option value="">TRIER PAR</option>
+             <option value="dog">Dog</option>
+             <option value="cat">Cat</option>
+           </select>  
+        </div>
+      </div>
+   </div>
  <!-- affichage des photos -->
   <div class="liste">
         <div class="liste-photos">
@@ -38,7 +82,7 @@
            </div>  
       </div>
       <div class="suite-liste">
-            <button id="btn4"><a>Toutes les photos </a>  </button>
+            <button id="btn4"><a>Charger plus </a>  </button>
       </div>
     </div>
 

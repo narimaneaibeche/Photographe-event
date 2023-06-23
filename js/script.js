@@ -1,23 +1,13 @@
 // Get the modal
 var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
 var btn = document.getElementById("menu-item-29");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
 }
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -26,24 +16,14 @@ window.onclick = function(event) {
 
 // modale pour le bouton
 var modall = document.getElementById('myModal');
-
-// Get the button that opens the modal
 var btn = document.getElementById("btn2");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
 btn.onclick = function() {
     modall.style.display = "block";
 }
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modall.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modall) {
         modall.style.display = "none";
@@ -84,3 +64,32 @@ hoverFleche2.onmouseover = function (){
 hoverFleche2.onmouseout = function (){
     afficheImg2.style.display = "none";   
 }
+/* Menu Burgere */
+let openBtn = document.getElementById("openBtn");
+let closeBtn = document.getElementById("closeBtn");
+
+let backdrop = document.getElementById("backdrop");
+
+openBtn.addEventListener("click", () => {
+  if(getComputedStyle(backdrop).display != "none"){
+    backdrop.style.display = "none";
+    
+  } else {
+    backdrop.style.display = "block";
+    openBtn.style.display = "none";
+    closeBtn.style.display = "block";
+    
+  }
+})
+closeBtn.addEventListener("click", () => {
+    if(getComputedStyle(backdrop).display != "none"){
+      backdrop.style.display = "none";
+      openBtn.style.display = "block";
+      closeBtn.style.display = "none";
+    } else {
+      backdrop.style.display = "block";
+      closeBtn.style.display = "block"; 
+      
+    }
+  })
+
