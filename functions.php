@@ -24,7 +24,13 @@ function theme_enqueue_styles() {
 function add_scripts() {
     wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/script.js', array('jquery'), '1.0', true );
 }
-add_action( 'wp_footer', 'add_scripts' );
+add_action( 'wp_enqueue_scripts', 'add_scripts' );
+
+// Chargement du js/lightbox.js pour nos personnalisations
+function add_scriptsLightbox() {
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/lightbox.js', array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'add_scriptsLightbox' );
 
 /* nav menu  commence ici */
 function register_my_menu(){

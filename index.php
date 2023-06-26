@@ -13,14 +13,14 @@
 
 
 
-
+<!--
   <div>
-   <?php $terms = get_terms('catégorie');?>
-   <?php foreach($terms as $t):?>
-      <a href="<?php echo get_term_link($t->slug,'catégorie');?>"><?php echo $t->name;?></a>
-   <?php endforeach;?>
+   <?php //$terms = get_terms('catégorie');?>
+   <?php //foreach($terms as $t):?>
+      <a href="<?php //echo get_term_link($t->slug,'catégorie');?>"><?//php echo $t->name;?></a>
+   <?php //endforeach;?>
 </div>
-
+   -->
 
 
 
@@ -31,28 +31,28 @@
         <div class="input-categorie">
           <select  name="categorie" id="categorie-select">
              <?php $terms = get_terms('catégorie');?>
-             <option value="" class="ctg">CATÉGORIE</option>
+             <option value="categorie" class="ctg">CATÉGORIE</option>
              <?php foreach($terms as $t):?>
-             <option value="" ><?php echo $t->name;?></option>
+             <option value="categorieType" ><?php echo $t->name;?></option>
              <?php endforeach;?> 
           </select>  
        </div>
         <div class="input-format">
            <select name="format" id="format-select">
               <?php $terms = get_terms('format');?>
-              <option value="" class="frm">FORMAT</option>
+              <option value="format" class="frm">FORMAT</option>
               <?php foreach($terms as $t):?>
-             <option value="format"><?php echo $t->name;?></option>
+             <option value="formatType"><?php echo $t->name;?></option>
              <?php endforeach;?>
            </select>  
         </div>
       </div>
       <div class="trier">
          <div class="input-trier">
-           <select name="trier" id="trier-select">
-             <option value="">TRIER PAR</option>
-             <option value="dog">Dog</option>
-             <option value="cat">Cat</option>
+           <select name="trier" id="trier-select" >
+             <option value="trier">TRIER PAR</option>
+             <option value="ancienne">Photos Anciennes</option>
+             <option value="recente">Photo récentes</option>
            </select>  
         </div>
       </div>
@@ -71,12 +71,18 @@
                    while ($query->have_posts()) : $query->the_post();
                         ?>
                         
-                       <div class="card-link">
-                            
-                              <?php the_post_thumbnail('post-thumbnail');?> 
-                              <a class="permalink" href= "<?php the_permalink()?>"><?php the_content()?></a>
-                           </a>
-                      </div>
+                        <div class="card-link">
+                <?php the_post_thumbnail('post-thumbnail');?> 
+                <?php the_content()?>
+                <div class="card-figure-hover-link"> 
+                <img class="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
+                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
+                   <div class="hover-title-cat">
+                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
+                      <h3><?php the_title();?> </h3>
+                   </div>
+                </div>
+              </div>
                    <?php endwhile; ?>
              </div>
            </div>  

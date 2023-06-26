@@ -8,7 +8,11 @@
          <div class="card">
             <div class="card-img">
                <img src="<?php the_post_thumbnail('post-thumbnail');?> " alt="" style="width:100%; height:auto;">
-              <div class="card-figure"> <?php the_content()?> </div>
+              <div class="card-figure"> <?php the_content()?> 
+                 <div class="card-figure-hover"> 
+                   <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " id="plein-ecran-1">
+                </div>
+              </div>
             </div>
             <div class="card-txt">
                <h2>
@@ -27,7 +31,7 @@
          <div class="card-contact">
             <div class="cnt">
              <div><p> Cette photo vous intéresse ? </p></div>
-              <button id="btn2"> <a>contact </a></button>
+              <button id="btn2" class="btn2"> <a>contact </a></button>
           </div>
           <?php endwhile ?>
             
@@ -80,6 +84,8 @@
             'post__not_in' => [get_the_ID()],
             'post_type' => 'photo',
             'posts_per_page' => 2,
+            'orderby' => 'date',
+            'order'  => 'ASC',
             'tax_query'=> [
             [
              'taxonomy'=> 'catégorie',
@@ -92,8 +98,18 @@
             while ($query->have_posts()) : $query->the_post();
          ?>
               <div class="card-link">
-              <?php the_post_thumbnail('post-thumbnail');?> 
-              <a class="permalink" href= "<?php the_permalink()?>"><?php the_content()?></a>
+                <?php the_post_thumbnail('post-thumbnail');?> 
+                <?php the_content()?>
+                <?php //var_dump($post->ID) ?>
+                
+                <div class="card-figure-hover-link"> 
+                   <img class="plein-ecran" id="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
+                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
+                   <div class="hover-title-cat">
+                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
+                      <h3><?php the_title();?> </h3>
+                   </div>
+                </div>
               </div>
          <?php endwhile; ?>
     </div>
@@ -107,9 +123,13 @@
         return $term->term_id;
         }, get_the_terms(get_post(), 'catégorie'));
         $query = new WP_Query([ 
+        // 'post__not_in' => [get_the_ID()],
         'post_type' => 'photo',
         'posts_per_page' => 20,
         'paged' => 1,
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'suppress_filters' => true,
         'tax_query'=> [
         [
         'taxonomy'=> 'catégorie',
@@ -125,10 +145,18 @@
       while ($query->have_posts()): $query->the_post();
       ?>
       
-      <div class="card-link">
-           <?php the_post_thumbnail('post-thumbnail');?> 
-           <a class="permalink" href= "<?php the_permalink()?>"><?php the_content()?></a>
-        </div>
+          <div class="card-link">
+                <?php the_post_thumbnail('post-thumbnail');?> 
+                <?php the_content()?>
+                <div class="card-figure-hover-link"> 
+                <img class="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
+                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
+                   <div class="hover-title-cat">
+                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
+                      <h3><?php the_title();?> </h3>
+                   </div>
+                </div>
+              </div>
       <?php endwhile;
     ?>
   </div>

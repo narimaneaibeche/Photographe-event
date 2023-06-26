@@ -13,22 +13,25 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+ // modale pour le bouton
+ var modal = document.getElementById('myModal');
+ var btn = document.getElementById("btn2");
+ var span = document.getElementsByClassName("close")[0];
+ 
+ btn.onclick = function() {
+     modal.style.display = "block";
+ }
+ span.onclick = function() {
+     modal.style.display = "none";
+ }
+ window.onclick = function(event) {
+     if (event.target == modal) {
+         modal.style.display = "none";
+     }
+ }
+ 
 
-// modale pour le bouton
-var modall = document.getElementById('myModal');
-var btn = document.getElementById("btn2");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modall.style.display = "block";
-}
-span.onclick = function() {
-    modall.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == modall) {
-        modall.style.display = "none";
-    }
-}
+
 // récupérer la valeur de la référence 
   $(document).ready(function(){
   
@@ -93,3 +96,27 @@ closeBtn.addEventListener("click", () => {
     }
   })
 
+/* lightbox */
+
+let OpenLightbox = document.getElementById("plein-ecran");
+let closeLightbox = document.getElementById("close-lightbox");
+let lightbox = document.getElementById("lightbox");
+
+OpenLightbox.onclick = function() {
+  lightbox.style.display = "block";
+}
+closeLightbox.onclick = function() {
+  lightbox.style.display = "none";
+}
+/* lightbox page de détaille */
+
+let OpenLightboxx = document.getElementById("plein-ecran-1");
+let closeLightboxx = document.getElementById("close-lightbox");
+let lightboxx = document.getElementById("lightbox");
+
+OpenLightboxx.onclick = function() {
+  lightboxx.style.display = "block";
+}
+closeLightboxx.onclick = function() {
+  lightboxx.style.display = "none";
+}
