@@ -54,8 +54,8 @@
                   <?php
                    wp_nav_menu(
                    array(
-                   'theme_location' => 'main-menu',
-                   'menu_id' => 'primary-menu',
+                   'theme_location' => 'menu-secondaire',
+                   'menu_id' => 'seconde-menu',
                     )
                     );
                    ?>
@@ -63,6 +63,6 @@
            </ul>
       </div>  
     </header>
-    <div class='container'>
+    
     
    

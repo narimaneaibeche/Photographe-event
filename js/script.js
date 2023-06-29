@@ -1,7 +1,9 @@
 // Get the modal
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("menu-item-29");
-var span = document.getElementsByClassName("close")[0];
+let modal = document.getElementById('myModal');
+let btn = document.getElementById('menu-item-29');
+let btnn = document.getElementById('menu-item-85');
+let btn2 = document.getElementById('btn2');
+let span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
     modal.style.display = "block";
 }
@@ -13,25 +15,12 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
- // modale pour le bouton
- var modal = document.getElementById('myModal');
- var btn = document.getElementById("btn2");
- var span = document.getElementsByClassName("close")[0];
- 
- btn.onclick = function() {
-     modal.style.display = "block";
- }
- span.onclick = function() {
-     modal.style.display = "none";
- }
- window.onclick = function(event) {
-     if (event.target == modal) {
-         modal.style.display = "none";
-     }
- }
- 
-
-
+btnn.onclick = function() {
+  modal.style.display = "block";
+}
+btn2.onclick = function() {
+  modal.style.display = "block";
+}
 // récupérer la valeur de la référence 
   $(document).ready(function(){
   
@@ -49,23 +38,26 @@ btnAfficher.onclick = function() {
   afficheNon.style.display = "none";
 }
 // afficher la pagination d'imager suivante en hover 
-var afficheImg = document.getElementById("nav-img1");
+/*var afficheImg = document.getElementById("nav-img1");
 var hoverFleche = document.getElementById("fleche-ss");
 hoverFleche.onmouseover = function (){
     afficheImg.style.display = "block";   
 }
 hoverFleche.onmouseout = function (){
     afficheImg.style.display = "none";   
-}
+}*/
 // afficher la pagination d'imager précédente en hover 
+var afficheImg = document.getElementById("nav-img1");
 var afficheImg2 = document.getElementById("nav-img2");
 var hoverFleche2 = document.getElementById("fleche-pp");
 console.log(afficheImg2);
 hoverFleche2.onmouseover = function (){
     afficheImg2.style.display = "block";   
+    afficheImg.style.display = "none"; 
 }
 hoverFleche2.onmouseout = function (){
     afficheImg2.style.display = "none";   
+    afficheImg.style.display = "block"; 
 }
 /* Menu Burgere */
 let openBtn = document.getElementById("openBtn");
@@ -95,7 +87,6 @@ closeBtn.addEventListener("click", () => {
       
     }
   })
-
 /* lightbox */
 
 let OpenLightbox = document.getElementById("plein-ecran");

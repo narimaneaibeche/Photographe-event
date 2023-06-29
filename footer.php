@@ -1,4 +1,4 @@
-</div>
+
  <?php get_template_part( '/templates_parts/modale' ); ?>
  <?php get_template_part( '/templates_parts/lightbox' ); ?>
    <?php wp_footer() ?>

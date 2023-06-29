@@ -38,6 +38,8 @@ function register_my_menu(){
         array(
         'main-menu' => __( 'Menu principal' ),
         'footer-menu' => __( 'Menu Footer' ),
+		'menu-secondaire' => __( 'Menu mobile' ),
+
         )
         );
   }

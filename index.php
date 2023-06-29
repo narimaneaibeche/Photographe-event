@@ -67,23 +67,7 @@
                   'post_type' => 'photo',
                   'posts_per_page' => 8,
                    ]);?>
-                <?php
-                   while ($query->have_posts()) : $query->the_post();
-                        ?>
-                        
-                        <div class="card-link">
-                <?php the_post_thumbnail('post-thumbnail');?> 
-                <?php the_content()?>
-                <div class="card-figure-hover-link"> 
-                <img class="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
-                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
-                   <div class="hover-title-cat">
-                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
-                      <h3><?php the_title();?> </h3>
-                   </div>
-                </div>
-              </div>
-                   <?php endwhile; ?>
+                 <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
              </div>
            </div>  
       </div>
@@ -93,7 +77,13 @@
     </div>
 
 
-
+<span id="btn2"></span>
+<span id="btn3"></span>
+<span id="fleche-ss"></span>
+<span id="fleche-pp"></span>
+<!--<span id="plein-ecran-1"></span>
+<span id="lightbox"></span>-->
+                 
 
 </div>
 

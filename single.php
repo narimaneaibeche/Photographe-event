@@ -2,6 +2,7 @@
 
 <?php
    if (have_posts()):  ?>
+<div class='container'>
    <div class="row-card1">
 
       <?php while (have_posts()): the_post();?>
@@ -59,12 +60,12 @@
 			            ?>
                  </div>
                  <div class="navigation-fleche">
-                     <span class="fleche-s" id="fleche-ss">
+                     <div class="fleche-s" id="fleche-ss">
                         <?php previous_post_link('%link', ' &#x2190'); ?>
-                     </span>
-                    <span class="fleche-p" id="fleche-pp" >
+                     </div>
+                    <div class="fleche-p" id="fleche-pp" >
                        <?php next_post_link('%link', '&#x2192'); ?>
-                     </span>
+                     </div>
                   </div>    
 		       </div>
         </div>   
@@ -85,7 +86,8 @@
             'post_type' => 'photo',
             'posts_per_page' => 2,
             'orderby' => 'date',
-            'order'  => 'ASC',
+            'order'=> 'ASC',
+            'suppress_filters' => true,
             'tax_query'=> [
             [
              'taxonomy'=> 'catégorie',
@@ -94,24 +96,9 @@
             ]
   
             ]);?>
-         <?php
-            while ($query->have_posts()) : $query->the_post();
-         ?>
-              <div class="card-link">
-                <?php the_post_thumbnail('post-thumbnail');?> 
-                <?php the_content()?>
-                <?php //var_dump($post->ID) ?>
-                
-                <div class="card-figure-hover-link"> 
-                   <img class="plein-ecran" id="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
-                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
-                   <div class="hover-title-cat">
-                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
-                      <h3><?php the_title();?> </h3>
-                   </div>
-                </div>
-              </div>
-         <?php endwhile; ?>
+       
+         
+         <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
     </div>
  </div>
  <!-- afficher plus des photo -->
@@ -128,7 +115,7 @@
         'posts_per_page' => 20,
         'paged' => 1,
         'orderby' => 'date',
-        'order' => 'ASC',
+        'order'=> 'ASC',
         'suppress_filters' => true,
         'tax_query'=> [
         [
@@ -136,29 +123,11 @@
         'terms'=> $photoss,
      ]
      ]
-   ]);
-   ?>
+   ]);?>
 
     <?php if($query->have_posts()): ?>
   
-    <?php 
-      while ($query->have_posts()): $query->the_post();
-      ?>
-      
-          <div class="card-link">
-                <?php the_post_thumbnail('post-thumbnail');?> 
-                <?php the_content()?>
-                <div class="card-figure-hover-link"> 
-                <img class="plein-ecran"src="<?php echo get_template_directory_uri() . '/assets/pe.png'; ?> " alt="image oeil " >
-                   <a class="permalink" href= "<?php the_permalink()?>"> <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " ></a>
-                   <div class="hover-title-cat">
-                      <p> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>
-                      <h3><?php the_title();?> </h3>
-                   </div>
-                </div>
-              </div>
-      <?php endwhile;
-    ?>
+      <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
   </div>
   </div>
   
@@ -171,5 +140,5 @@
 </div>
 
  <?php endif; ?>  
-
+</div>
 <?php get_footer(); ?>
