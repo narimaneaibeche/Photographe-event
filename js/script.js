@@ -37,15 +37,6 @@ btnAfficher.onclick = function() {
   btnAfficher.style.display = "none";
   afficheNon.style.display = "none";
 }
-// afficher la pagination d'imager suivante en hover 
-/*var afficheImg = document.getElementById("nav-img1");
-var hoverFleche = document.getElementById("fleche-ss");
-hoverFleche.onmouseover = function (){
-    afficheImg.style.display = "block";   
-}
-hoverFleche.onmouseout = function (){
-    afficheImg.style.display = "none";   
-}*/
 // afficher la pagination d'imager précédente en hover 
 var afficheImg = document.getElementById("nav-img1");
 var afficheImg2 = document.getElementById("nav-img2");
@@ -111,3 +102,25 @@ OpenLightboxx.onclick = function() {
 closeLightboxx.onclick = function() {
   lightboxx.style.display = "none";
 }
+/* charger plus avec ajax */
+
+let currentPage = 1;
+$('#btn4').on('click', function() {
+  currentPage++; // Do currentPage + 1, because we want to load the next page
+
+  $.ajax({
+    type: 'POST',
+    url: 'wp-admin/admin-ajax.php',
+    dataType: 'json',
+    data: {
+      action: 'weichie_load_more',
+      paged: currentPage,
+    },
+    success: function (res) {
+      if(currentPage >= res.max) {
+        $('#btn4').hide();
+      }
+      $('.card2-img2').append(res.html);
+    }
+  });
+});

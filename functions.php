@@ -20,17 +20,7 @@ function theme_enqueue_styles() {
     // Chargement du css/theme.css pour nos personnalisations
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 }
-// Chargement du js/script.js pour nos personnalisations
-function add_scripts() {
-    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/script.js', array('jquery'), '1.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'add_scripts' );
 
-// Chargement du js/lightbox.js pour nos personnalisations
-function add_scriptsLightbox() {
-    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/lightbox.js', array('jquery'), '1.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'add_scriptsLightbox' );
 
 /* nav menu  commence ici */
 function register_my_menu(){
@@ -111,4 +101,52 @@ function photo_register_taxonomies() {
 
 add_action('init', 'photo_register_taxonomies');
 
-// afficher plus d'image de la meme catégorie
+// Chargement du js/script.js pour nos personnalisations
+function add_scripts() {
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/script.js', array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'add_scripts' );
+
+// Chargement du js/lightbox.js pour nos personnalisations
+function add_scriptsLightbox() {
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri()  . '/js/lightbox.js', array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'add_scriptsLightbox' );
+
+// afficher plus d'image 
+
+function weichie_load_more() {
+	$query  = new WP_Query([
+		'post_type' => 'photo',
+		'posts_per_page' => 8,
+		'orderby'=> 'date',
+		'order'=> 'DESC',
+	    'paged' => $_POST['paged'],
+	]);
+  
+	$response = '';
+	$max_pages = $ajaxposts->max_num_pages;
+  
+	if($query ->have_posts()) {
+		ob_start();
+		include (TEMPLATEPATH . "/templates_parts/photo_block.php"); 
+		$output = ob_get_contents();
+        ob_end_clean();
+
+	} else {
+	  $response = '';
+	}
+	$result = [
+		'max' => $max_pages,
+		'html' => $output,
+	  ];
+
+	 echo json_encode($result);
+	
+	exit;
+	
+  }
+  
+  add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
+  add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+  

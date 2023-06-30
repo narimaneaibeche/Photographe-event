@@ -459,7 +459,8 @@ figure{
     margin-bottom: 6vh;
     border: 1px solid #B8BBC2;
     margin: auto;
-    transition: all 1s ease-out;   
+    transition: all 1s ease-out;  
+    cursor: pointer; 
 }
 #btn4:hover{
     color: white;
@@ -467,6 +468,7 @@ figure{
     font-weight: 900;
     
 }
+
 .suite-liste{
     margin-left: 11vh;
     margin-right: 11vh;

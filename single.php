@@ -85,8 +85,9 @@
             'post__not_in' => [get_the_ID()],
             'post_type' => 'photo',
             'posts_per_page' => 2,
-            'orderby' => 'date',
-            'order'=> 'ASC',
+            'orderby'=> 'date',
+            'order'=> 'DESC',
+             'paged' => 1,
             'suppress_filters' => true,
             'tax_query'=> [
             [
@@ -113,22 +114,21 @@
         // 'post__not_in' => [get_the_ID()],
         'post_type' => 'photo',
         'posts_per_page' => 20,
-        'paged' => 1,
-        'orderby' => 'date',
-        'order'=> 'ASC',
+        'orderby'=> 'date',
+        'order'=> 'DESC',
+         'paged' => 1,
         'suppress_filters' => true,
         'tax_query'=> [
         [
         'taxonomy'=> 'catégorie',
         'terms'=> $photoss,
-     ]
-     ]
-   ]);?>
+         ]
+         ]
+        ]);?>
 
-    <?php if($query->have_posts()): ?>
-  
-      <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
-  </div>
+         <?php if($query->have_posts()): ?>
+          <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
+      </div>
   </div>
   
 <?php endif; ?>
