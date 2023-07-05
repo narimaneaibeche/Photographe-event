@@ -12,47 +12,47 @@
   </div>
 
 
-
-<!--
-  <div>
-   <?php //$terms = get_terms('catégorie');?>
-   <?php //foreach($terms as $t):?>
-      <a href="<?php //echo get_term_link($t->slug,'catégorie');?>"><?//php echo $t->name;?></a>
-   <?php //endforeach;?>
-</div>
-   -->
-
-
-
-
-
-   <div class="inputs">
+     <div class="inputs">
      <div class="input-tax">
         <div class="input-categorie">
-          <select  name="categorie" id="categorie-select">
-             <?php $terms = get_terms('catégorie');?>
-             <option value="categorie" class="ctg">CATÉGORIE</option>
-             <?php foreach($terms as $t):?>
-             <option value="categorieType" ><?php echo $t->name;?></option>
-             <?php endforeach;?> 
-          </select>  
+           <?php $categories = get_terms( 'catégorie' );?>
+           <select  name="catégorie" id="js-filter-itemm" > 
+
+             <option value="0" selected> CATÉGORIE </option>
+
+            <?php foreach($categories as $cat) : ?>
+
+             <option value= "<?= $cat->term_id; ?>"><?= $cat->name; ?> </option>
+
+             <?php endforeach; ?> 
+             
+
+           </select>  
        </div>
+
+
         <div class="input-format">
+        <?php $format = get_terms( 'format' );?>
            <select name="format" id="format-select">
-              <?php $terms = get_terms('format');?>
-              <option value="format" class="frm">FORMAT</option>
-              <?php foreach($terms as $t):?>
-             <option value="formatType"><?php echo $t->name;?></option>
+
+              <option value="0" class="frm">FORMAT</option>
+
+              <?php foreach($format as $t) : ?>
+
+             <option value="<?= $t->term_id; ?>"><?= $t->name;?></option>
+
              <?php endforeach;?>
            </select>  
         </div>
       </div>
+
       <div class="trier">
          <div class="input-trier">
-           <select name="trier" id="trier-select" >
-             <option value="trier">TRIER PAR</option>
-             <option value="ancienne">Photos Anciennes</option>
-             <option value="recente">Photo récentes</option>
+         <?php $date = get_terms( 'date' );?>
+           <select name="sort" id="trier-select" >
+             <option value="0">TRIER PAR</option>
+             <option value="date-desc">Les Plus Anciennes</option>
+             <option value="date-asc">Les Plus Récentes</option>
            </select>  
         </div>
       </div>
@@ -62,13 +62,16 @@
       <div class="liste-photos">
         <div id="card2-img-plus" >
           <?php
-          $query = new WP_Query([
-          'post_type' => 'photo',
-          'posts_per_page' => 8,
-          'orderby'=> 'date',
-          'order'=> 'DESC',
-          'paged'=> 1,
-          ]);?>
+          $args = array(
+            'post_type' => 'photo',
+            'posts_per_page' => 8,
+            'orderby'=> 'date',
+            'order'=> 'DESC',
+            'paged'=> 1,
+            );
+          $query = new WP_Query($args);
+         ?>
+
           <?php if($query->have_posts()): ?>
           <div class="card2-img2" >
                <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
@@ -89,5 +92,5 @@
 <span id="fleche-pp"></span>
 <span id="plein-ecran-1"></span>
 <span id="lightbox"></span>
-
+          
 <?php get_footer() ?>

@@ -1,4 +1,8 @@
-// Get the modal
+
+
+ 
+
+// La modal
 let modal = document.getElementById('myModal');
 let btn = document.getElementById('menu-item-29');
 let btnn = document.getElementById('menu-item-85');
@@ -18,7 +22,9 @@ window.onclick = function(event) {
 btnn.onclick = function() {
   modal.style.display = "block";
 }
+
 btn2.onclick = function() {
+  
   modal.style.display = "block";
 }
 // récupérer la valeur de la référence 
@@ -78,30 +84,7 @@ closeBtn.addEventListener("click", () => {
       
     }
   })
-/* lightbox */
 
-let OpenLightbox = document.getElementById("plein-ecran");
-let closeLightbox = document.getElementById("close-lightbox");
-let lightbox = document.getElementById("lightbox");
-
-OpenLightbox.onclick = function() {
-  lightbox.style.display = "block";
-}
-closeLightbox.onclick = function() {
-  lightbox.style.display = "none";
-}
-/* lightbox page de détaille */
-
-let OpenLightboxx = document.getElementById("plein-ecran-1");
-let closeLightboxx = document.getElementById("close-lightbox");
-let lightboxx = document.getElementById("lightbox");
-
-OpenLightboxx.onclick = function() {
-  lightboxx.style.display = "block";
-}
-closeLightboxx.onclick = function() {
-  lightboxx.style.display = "none";
-}
 /* charger plus avec ajax */
 
 let currentPage = 1;
@@ -110,17 +93,20 @@ $('#btn4').on('click', function() {
 
   $.ajax({
     type: 'POST',
-    url: 'wp-admin/admin-ajax.php',
+    url: 'http://localhost:8888/photographe-event/wp-admin/admin-ajax.php',
     dataType: 'json',
     data: {
       action: 'weichie_load_more',
       paged: currentPage,
     },
     success: function (res) {
-      if(currentPage >= res.max) {
+      if(currentPage >= res.max ) {
         $('#btn4').hide();
       }
       $('.card2-img2').append(res.html);
     }
   });
 });
+
+
+

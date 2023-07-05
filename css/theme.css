@@ -11,6 +11,10 @@
     #wp-toolbar{
       display: flex;
     }
+    .cat-list{
+      display: flex;
+      flex-direction: column;
+    }
 
 body {
     font-family: 'Space Mono' ,sans-serif !important;
@@ -62,9 +66,10 @@ ul{
     display: flex;  
     list-style-type:none
 }
-a {
-   
-    transition: all 0.2s ease-out;
+a { 
+  transition: all 0.2s ease-out;
+  color: black;
+  text-decoration: none;
   }
   
   a:hover,
