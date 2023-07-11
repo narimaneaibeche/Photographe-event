@@ -1,7 +1,4 @@
 
-
- 
-
 // La modal
 let modal = document.getElementById('myModal');
 let btn = document.getElementById('menu-item-29');
@@ -47,7 +44,7 @@ btnAfficher.onclick = function() {
 var afficheImg = document.getElementById("nav-img1");
 var afficheImg2 = document.getElementById("nav-img2");
 var hoverFleche2 = document.getElementById("fleche-pp");
-console.log(afficheImg2);
+//console.log(afficheImg2);
 hoverFleche2.onmouseover = function (){
     afficheImg2.style.display = "block";   
     afficheImg.style.display = "none"; 

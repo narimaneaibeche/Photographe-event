@@ -27,6 +27,7 @@ body {
     margin: 0 auto;
     max-width: 1440px;
 }
+
 h2{
     font-style: italic;
     font-size: 66px;
@@ -347,6 +348,7 @@ span textarea{
   margin-top: 43%;
   margin-left: 45%;
   margin-right: 45%;
+  
 }
 .card-link figure{
   height: 100%;
@@ -375,7 +377,7 @@ span textarea{
     flex-wrap: wrap; 
 }
 
-#btn3{
+#btn3 {
     width:28vh;
     height:6vh;
     background-color: #D8D8D8;
@@ -388,11 +390,12 @@ span textarea{
     transition: all 1s ease-out;   
 }
 #btn3:hover{
-    color: white;
+  color: white ;
     background-color: black;
-    font-weight: 900;
-    
+    font-weight: 900;  
+    cursor: pointer;
 }
+
 .row-card2-photo{
     display: flex;
     flex-direction: column;
@@ -498,6 +501,7 @@ figure{
   .input-tax{ 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 50%;  
   }
   .trier{
@@ -510,8 +514,13 @@ figure{
     margin-right: 11vh;
     display: flex;
     justify-content: space-between;
+   
     margin-top: 4vw;
     margin-bottom: 3vw;
+    flex-wrap: wrap;
+  }
+  .input-categorie,.input-format{
+    margin-bottom: 2vh;
   }
   .ctg,.frm{
     margin-bottom: 2vw;
@@ -525,10 +534,9 @@ figure{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.848); 
+    background-color: rgba(0, 0, 0, 0.9); 
     z-index: 99999;
-    animation: lightboxIn .5s;
+    animation: lightboxIn 1s;
   }
   .lightbox__next,
   .lightbox__prev{
@@ -541,48 +549,59 @@ figure{
     z-index: 11;
     font-size: 20px;
     opacity: .5;
-    right: 40px;
+    right: 0px;
   }
   .lightbox__next1,
   .lightbox__prev1{
   display: none;
   }
 
-  .lightbox-ref-cat{
+  .info-lightbox{
     color: #FFFFFF;
     margin-top: -14px;
     font-size: 16px;
     display: flex;
     flex-direction: row-reverse;
-    align-items: center
+    align-items: center;
+    justify-content: space-around;
+    
     
   }
-  .lightbox-ref-cat p a{
+  #cat-light a,
+  #reff-light{
     color: #FFFFFF;
-    margin-left: 22vw;
+    
   }
+  
   .lightbox__next{
     right: auto;
-    left: 40px;
+    /*left: 40px;*/
   }
   .lightbox__next a,
   .lightbox__prev a{
     color: #FFFFFF;
   }
   .lightbox__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
-    min-height: 100vh; 
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 13vh;
+    animation: lightboxIn 1s;
+        
   }
-  .lightbox__container img {
-    max-width: 100%;
-    height: 80vh !important;
-    margin-top: 30px;
+  #image-lightbox{
+    object-fit: cover;
+    max-width: fit-content;
+    height: 80vh;
     animation: lightboxIn .5s;
+    margin: auto;
+  }
+  #image-lightbox img{
+    width: 100%;
+    height: 100%;
+  }
+  #image-lightbox figure figure img{
+    max-width: 100%;
+    max-height: 100%;
   }
   
   .lightbox__close{
@@ -605,11 +624,16 @@ figure{
   #plein-ecran-1{
     cursor: pointer;
   }
+  #reff-lightbox{
+    display: none;
+  }
+ 
   @keyframes lightboxIn{
     from {opacity: 0;}
     to{opacity: 1;}
     
   }
+  
 
 
 
@@ -629,7 +653,7 @@ figure{
     
     .card-link {
         width: 66vh;
-       /* height: 57vw;*/
+       /*height: 57vw;*/
     }
     .permalink{
       margin-top: 30%;
@@ -654,7 +678,7 @@ figure{
 
     .card-link {
       width: 66vh;
-      height: 57vw;
+      /*height: 57vw;*/
     }
     
 
@@ -666,9 +690,27 @@ figure{
     }
     .card-link {
       width: 66vh;
-      height: 57vw; 
+      /*height: 57vw; */
   }
-
+  .inputs {
+    display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding-bottom: 2vw;
+   margin-left: 12vw;
+   }
+   .input-tax{
+    display: flex;
+    flex-direction: column;
+   }
+   .trier{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   }
+   .input-categorie,.input-format,.input-trier{
+    margin-bottom: 4vw;
+   }
   }
   /* les media querie mobile */
   @media screen and (max-width: 600px){
@@ -757,15 +799,18 @@ figure{
     margin: none;
     width: 100%;
    }
-   /*.lightbox__close{
-   margin-top: 30px;
-  }*/
-  .lightbox__container {
-  margin-top: 50px;
+ 
+ 
+  #image-lightbox {
+    height: auto;
+   }
+   .lightbox__container {
+    margin-left: 5vh;
+    margin-right: 7vh;
+    margin-top: 25vh;
   }
   .lightbox__next1{
     display: block;
-    color: #FFFFFF;
     border: none;
     position: fixed;
     top: 50%;
@@ -777,7 +822,6 @@ figure{
   }
   .lightbox__prev1{
     display: block;
-    color: #FFFFFF;
     border: none;
     position: fixed;
     top: 50%;
@@ -826,25 +870,8 @@ figure{
     margin-right: 6vw;
 
    }
-   .inputs {
-    display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   padding-bottom: 2vw;
-   margin-left: 7vh
-   }
-   .input-tax{
-    display: flex;
-    flex-direction: column;
-   }
-   .trier{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-   }
-   .input-categorie,.input-format,.input-trier{
-    margin-bottom: 4vw;
-   }
+   
+   
 
    /* Menu Burgere */
 

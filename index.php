@@ -64,7 +64,7 @@
           <?php
           $args = array(
             'post_type' => 'photo',
-            'posts_per_page' => 8,
+            'posts_per_page' => 12,
             'orderby'=> 'date',
             'order'=> 'DESC',
             'paged'=> 1,
@@ -86,11 +86,11 @@
  </div>                
 </div>
 
-<span id="btn2"></span>
+<span id="btn2" ></span>
 <span id="btn3"></span>
 <span id="fleche-ss"></span>
 <span id="fleche-pp"></span>
-<span id="plein-ecran-1"></span>
-<span id="lightbox"></span>
+<!--<span id="plein-ecran-1"></span>
+<span id="lightbox"></span>-->
           
 <?php get_footer() ?>

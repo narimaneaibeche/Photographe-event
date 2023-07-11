@@ -5,16 +5,19 @@
         $('#format-select').change(function(e){
             e.preventDefault();
             var category_var = $(this).val();
-            console.log(category_var);
+            //console.log(category_var);
             $.ajax({
                 url: wp_ajax.ajax_url,
                 data: { action: 'filter', category: category_var },
                 type: 'post',
                 success: function(result) {                    
-                    $('#card2-img-plus').html(result);                  
+                    $('#card2-img-plus').html(result);  
+                    $('#btn4').hide();                 
                 },
                 error: function(result) {
-                    console.warn(result);                   
+                    console.warn(result);  
+                      
+                                     
                 }
             });
         });
@@ -34,7 +37,8 @@
                 data: { action: 'filter', category_1: category_var },
                 type: 'post',
                 success: function(result) {
-                    $('#card2-img-plus').html(result);                   
+                    $('#card2-img-plus').html(result); 
+                    $('#btn4').hide();                  
                 },
                 error: function(result) {
                     console.warn(result);
@@ -64,7 +68,7 @@
                 sort = 'DESC';
             }
            
-            console.log('f1', sortInput);
+            //console.log('f1', sortInput);
             $.ajax({
                 url: wp_ajax.ajax_url,
                 data: { action: 'filter', 
@@ -75,6 +79,7 @@
                 type: 'post',
                 success: function(result) {
                     $('#card2-img-plus').html(result);
+                    $('#btn4').hide();   
                 },
                 error: function(result) {
                     console.warn(result);                  

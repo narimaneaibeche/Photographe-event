@@ -29,6 +29,7 @@ wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/script.js', 
 wp_enqueue_script( 'diaporama', get_stylesheet_directory_uri(). '/js/lightbox.js', array( 'jquery' ), '1.0', true);
 }
 add_action( 'wp_footer', 'capitaine_register_assets' );
+
 /* nav menu  commence ici */
 function register_my_menu(){
     register_nav_menus(
@@ -115,7 +116,7 @@ add_action('init', 'photo_register_taxonomies');
 function weichie_load_more() {
 	$query  = new WP_Query([
 		'post_type' => 'photo',
-		'posts_per_page' => 8,
+		'posts_per_page' => 12,
 		'orderby'=> 'date',
 		'order'=> 'DESC',
 	    'paged' => $_POST['paged'],
@@ -156,26 +157,26 @@ function weichie_load_more() {
     wp_localize_script('ajax' , 'wp_ajax',
         array('ajax_url' => admin_url('admin-ajax.php'))
         );
-}
-add_action( 'wp_enqueue_scripts', 'load_scripts');
+   }
+   add_action( 'wp_enqueue_scripts', 'load_scripts');
 
-/*les filtre de select  */
+   /*les filtre de select  */
 
-add_action( 'wp_ajax_nopriv_filter', 'filter_ajax' );
-add_action( 'wp_ajax_filter', 'filter_ajax' );
+  add_action( 'wp_ajax_nopriv_filter', 'filter_ajax' );
+  add_action( 'wp_ajax_filter', 'filter_ajax' );
 
-function filter_ajax() {
+  function filter_ajax() {
 
-$args = array(
+  $args = array(
         'post_type' => 'photo',
 		'post_status' => 'publish',
-        'posts_per_page' => 8,
+        'posts_per_page' => -1,
         );
 
 		
 		$args['tax_query'] = array();
 
-		//  categorie taxonomy
+		//  categorie filter
 		if( isset($_POST['category_1']) && !empty($_POST['category_1']) ) {
 			$args['tax_query'][] = array(
 				'taxonomy' => 'catégorie',
@@ -184,7 +185,7 @@ $args = array(
 			);
 		}
 		
-		//  format taxonomy
+		//  format filter
 		if( isset($_POST['category']) && !empty($_POST['category']) ) {
 			$args['tax_query'][] = array(
 				'taxonomy' => 'format',
@@ -200,7 +201,7 @@ $args = array(
 			
 			$args = [
 				'post_type' => 'photo',
-				'posts_per_page' => '8',
+				'posts_per_page' => '-1',
 				'status' => 'publish',
 				'orderby' => $orderby,
 				'order' => $order,
@@ -227,47 +228,3 @@ $args = array(
     die();
 }
 
-/*les filtre de select format 
-
-add_action( 'wp_ajax_nopriv_filter', 'filter_ajax_format' );
-add_action( 'wp_ajax_filter', 'filter_ajax_format' );
-
-function filter_ajax_format() {
-
-
-$format = $_POST['category'];
-
-$args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 8,
-        );
-
-        if(isset($format)) {
-            $args = array(
-				'post_type' => 'photo',
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'format',
-						'terms'    => $format,
-					),
-				),
-			);
-		
-		
-        }
-
-        $query = new WP_Query($args);
-
-        if($query->have_posts()) :?>
-			<div class="card2-img2" >
-				
-			<?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
-	   </div>
-	   <?php
-        endif;
-        wp_reset_postdata(); 
-
-
-    die();
-}
-*/

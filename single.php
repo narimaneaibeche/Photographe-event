@@ -11,7 +11,7 @@
                <img src="<?php the_post_thumbnail('post-thumbnail');?> " alt="" style="width:100%; height:auto;">
               <div class="card-figure"> <?php the_content()?> 
                  <div class="card-figure-hover"> 
-                   <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " id="plein-ecran-1">
+                   <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil "  id="plein-ecran-1">
                 </div>
               </div>
             </div>
@@ -32,7 +32,7 @@
          <div class="card-contact">
             <div class="cnt">
              <div><p> Cette photo vous intéresse ? </p></div>
-              <button id="btn2" class="btn2"> <a>contact </a></button>
+              <button id="btn2" class="btn2"> contact </button>
           </div>
           <?php endwhile ?>
             
@@ -103,7 +103,7 @@
     </div>
  </div>
  <!-- afficher plus des photo -->
-   <button id="btn3" class="card-link-suite"><a>Toutes les photos </a>  </button>
+   <button id="btn3" class="card-link-suite">Toutes les photos </button>
    <div id="publication-list">
       <div  class="pub-list">
         <?php 
