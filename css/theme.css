@@ -203,6 +203,7 @@ span textarea{
 .card-figure{
     width: 100%;
     position: relative;
+    margin-top: 5vh;
 }
 
 .card-figure-hover{
@@ -527,7 +528,7 @@ figure{
   }
   /* lightbox */
 
-  .lightbox{
+  .lightbox, .lightboxx{
     display: none;
    position: fixed;
     top: 0;
@@ -575,7 +576,7 @@ figure{
   
   .lightbox__next{
     right: auto;
-    /*left: 40px;*/
+    left: 0px;
   }
   .lightbox__next a,
   .lightbox__prev a{
@@ -588,10 +589,11 @@ figure{
     animation: lightboxIn 1s;
         
   }
-  #image-lightbox{
+  #image-lightbox,
+  #image-lightbox1{
     object-fit: cover;
     max-width: fit-content;
-    height: 80vh;
+    height: 40vw;
     animation: lightboxIn .5s;
     margin: auto;
   }
@@ -804,37 +806,48 @@ figure{
   #image-lightbox {
     height: auto;
    }
-   .lightbox__container {
+   #image-lightbox1 {
+    height: auto;
+   }
+   .lightbox__container{
     margin-left: 5vh;
     margin-right: 7vh;
     margin-top: 25vh;
   }
+  
   .lightbox__next1{
     display: block;
     border: none;
-    position: fixed;
+    /*position: fixed;*/
     top: 50%;
+    margin-left: -9vw;
     margin-top: -14px;
     z-index: 11;
     font-size: 20px;
-    
+    left: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
     
   }
   .lightbox__prev1{
     display: block;
     border: none;
-    position: fixed;
+   /* position: fixed;*/
+   margin-right: -9vw;
     top: 50%;
     margin-top: -14px;
     z-index: 11;
     font-size: 20px;
-    right: 10px;
+    right: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-
+  
   .lightbox__next,
   .lightbox__prev{
-  display: none;
+  font-size: 10px;
   }
+  
 
    #btn3{
     width: 65vw;
@@ -849,7 +862,7 @@ figure{
     display: flex;
     list-style-type: none;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
    }
    footer li{
     margin-bottom: 2vh;

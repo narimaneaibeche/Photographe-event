@@ -20,10 +20,11 @@ btnn.onclick = function() {
   modal.style.display = "block";
 }
 
+if (btn2!=null)  
 btn2.onclick = function() {
   
   modal.style.display = "block";
-}
+};
 // récupérer la valeur de la référence 
   $(document).ready(function(){
   
@@ -35,24 +36,27 @@ btn2.onclick = function() {
 var affichePlus = document.getElementById('publication-list');
 var afficheNon = document.getElementById('card2-img-plus');
 var btnAfficher = document.getElementById('btn3');
+if (btnAfficher!=null) 
 btnAfficher.onclick = function() {
   affichePlus.style.display = "block";
   btnAfficher.style.display = "none";
   afficheNon.style.display = "none";
-}
+};
 // afficher la pagination d'imager précédente en hover 
 var afficheImg = document.getElementById("nav-img1");
 var afficheImg2 = document.getElementById("nav-img2");
 var hoverFleche2 = document.getElementById("fleche-pp");
 //console.log(afficheImg2);
+if (hoverFleche2!=null) 
 hoverFleche2.onmouseover = function (){
     afficheImg2.style.display = "block";   
     afficheImg.style.display = "none"; 
-}
+};
+if (hoverFleche2!=null) 
 hoverFleche2.onmouseout = function (){
     afficheImg2.style.display = "none";   
     afficheImg.style.display = "block"; 
-}
+};
 /* Menu Burgere */
 let openBtn = document.getElementById("openBtn");
 let closeBtn = document.getElementById("closeBtn");
@@ -105,5 +109,21 @@ $('#btn4').on('click', function() {
   });
 });
 
+// lightbox  de filtre
 
+$(document).on('click', ".plein-ecran", function (e) {
+  e.preventDefault();
+  let numero = $(this).parent().parent().index();
+    console.log('numero de slide',(numero/2));
+let slidesss = document.getElementsByClassName('lightbox__container 1');
+console.log('slides filtre',slidesss.length);
+})
 
+$(document).on('click', ".plein-ecran", function (e) {
+  e.preventDefault();
+
+  let numero = $(this).parent().parent().index();
+    console.log('numero de slide DETAILLE',(numero/2));
+let slidesss = document.getElementsByClassName('lightbox__container 2');
+console.log('slides filtre DETAILL',slidesss.length);
+})

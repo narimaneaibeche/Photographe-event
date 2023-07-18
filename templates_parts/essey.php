@@ -96,3 +96,79 @@ function previousImage(){
    document.getElementsByClassName('lightbox__container')[0].src = images[index];
    console.log(images[index]);
 }
+
+
+
+// début de pagination
+
+  let slideIndex = 1; 
+
+  showSlides(slideIndex);
+
+  // afficher le slide 
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    console.log(n);
+    let slides = document.getElementsByClassName('lightbox__container');
+    console.log(slides);
+    if(n > slides.length) { slideIndex = 1 }
+    if(n < 1 ) { slideIndex = slides.length }
+    // Cacher toutes les slides
+      for(let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      // Afficher la slide demandée
+    slides[slideIndex - 1 ].style.display = 'block';
+  }
+  $(document).on('click', ".lightbox__next,.lightbox__next1", function () {
+    plusSlides(-1);
+  });
+  $(document).on('click', ".lightbox__prev,.lightbox__prev1", function () {
+   plusSlides(1);
+  });
+
+  // fin de pagination
+  
+
+  // début de pagination
+
+let slideIndex = indice; 
+
+showSlides(slideIndex);
+
+// afficher le slide 
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  console.log('rima',indice);
+  let slides = document.getElementsByClassName('lightbox__container');
+  console.log(slides);
+  
+  if(n > (slides.length)-1) { 
+    slideIndex = 0 ;
+  }
+  console.log('longeur',slides.length)
+  if(n < 0 ) { slideIndex = (slides.length)-1 }
+ 
+  // Cacher toutes les slides
+    for(let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    // Afficher la slide demandée
+  slides[slideIndex ].style.display = 'block';
+}
+$(document).on('click', ".lightbox__next,.lightbox__next1", function () {
+  plusSlides(-1);
+});
+$(document).on('click', ".lightbox__prev,.lightbox__prev1", function () {
+ plusSlides(1);
+});
+
+// fin de pagination

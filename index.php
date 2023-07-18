@@ -11,8 +11,8 @@
       </div>
   </div>
 
-
-     <div class="inputs">
+<div class="cc">
+   <div class="inputs">
      <div class="input-tax">
         <div class="input-categorie">
            <?php $categories = get_terms( 'catégorie' );?>
@@ -83,14 +83,9 @@
     <div class="suite-liste">
        <button id="btn4"> Charger plus  </button>
     </div>
- </div>                
+ </div>  
+  </div>              
 </div>
 
-<span id="btn2" ></span>
-<span id="btn3"></span>
-<span id="fleche-ss"></span>
-<span id="fleche-pp"></span>
-<!--<span id="plein-ecran-1"></span>
-<span id="lightbox"></span>-->
           
 <?php get_footer() ?>

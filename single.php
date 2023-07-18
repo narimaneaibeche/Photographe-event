@@ -8,10 +8,11 @@
       <?php while (have_posts()): the_post();?>
          <div class="card">
             <div class="card-img">
-               <img src="<?php the_post_thumbnail('post-thumbnail');?> " alt="" style="width:100%; height:auto;">
-              <div class="card-figure"> <?php the_content()?> 
+               
+              <div class="card-figure"> 
+                <?php the_content()?> 
                  <div class="card-figure-hover"> 
-                   <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil "  id="plein-ecran-1">
+                   <img src="<?php echo get_template_directory_uri() . '/assets/oeil2.png'; ?> " alt="image oeil " class="plein-ecran1" id="plein-ecran-1">
                 </div>
               </div>
             </div>
@@ -100,8 +101,12 @@
        
          
          <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
+        
+
+         
     </div>
  </div>
+ 
  <!-- afficher plus des photo -->
    <button id="btn3" class="card-link-suite">Toutes les photos </button>
    <div id="publication-list">
@@ -113,7 +118,7 @@
         $query = new WP_Query([ 
         // 'post__not_in' => [get_the_ID()],
         'post_type' => 'photo',
-        'posts_per_page' => 20,
+        'posts_per_page' => 12,
         'orderby'=> 'date',
         'order'=> 'DESC',
          'paged' => 1,
@@ -130,15 +135,15 @@
           <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
       </div>
   </div>
-  
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!--ici on arrete -->
+  <?php include (TEMPLATEPATH . "/templates_parts/lightbox_filtre.php"); ?> 
+    <?php endif; ?>
     </div>
   </div>
 </div>
 
- <?php endif; ?>  
+ <?php endif; ?> 
+
 </div>
+
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>

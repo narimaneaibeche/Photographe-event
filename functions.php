@@ -1,3 +1,4 @@
+
 <?php 
 
 /*function montheme_supports(){
@@ -29,6 +30,7 @@ wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/script.js', 
 wp_enqueue_script( 'diaporama', get_stylesheet_directory_uri(). '/js/lightbox.js', array( 'jquery' ), '1.0', true);
 }
 add_action( 'wp_footer', 'capitaine_register_assets' );
+
 
 /* nav menu  commence ici */
 function register_my_menu(){
@@ -222,9 +224,28 @@ function weichie_load_more() {
 	   </div>
 	   <?php
         endif;
-        wp_reset_postdata(); 
-
-
+?>
+<div class="lightbox" id="lightbox">
+  <?php $query = new WP_Query($args); ?>
+  <?php  while ($query->have_posts()) : $query->the_post();?>
+  <div class="lightbox__container 1">
+      <div id="image-lightbox1">
+		 <?php the_content()?>
+     </div>
+     <div class="info-lightbox">
+         <p id="cat-light"> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>                 
+         <h4 id="reff-light" ><?php the_field('référence'); ?></h4> 
+	     <button class="lightbox__next 1" >  &#x2190 Précédente</button>  
+	     <button class="lightbox__prev 1"> Suivante &#x2192</button>             
+     </div>
+  </div>
+  <button class="lightbox__close" id="close-lightbox">&times;</button>	   
+  <?php endwhile; ?>
+</div>
+<?php wp_reset_postdata(); ?>
+<?php
     die();
 }
+
+
 

@@ -5,23 +5,22 @@
   
 
   <button class="lightbox__next" >  &#x2190 Précédente</button>
-  <button class="lightbox__prev" > Suivante &#x2192</button>
-
+  <button class="lightbox__prev"> Suivante &#x2192</button>
+<!--
   <button class="lightbox__next1">  &#x2190 </button>
   <button class="lightbox__prev1">&#x2192</button>
-
+-->
  <?php
  
     $args = array(
       'post__not_in' => [get_the_ID()],
       'post_type' => 'photo',
       'posts_per_page' => -1,  
-      'orderby'=> 'date',
-      'order'=> 'DESC',
       'paged' => 1,  
      );
     $query = new WP_Query($args);
     ?>
+   
   <?php 
       while ($query->have_posts()) : $query->the_post();
    ?>
@@ -34,5 +33,7 @@
      </div>
   </div>
   <?php endwhile; ?>
+
+    <?php wp_reset_postdata(); ?>
  
 </div>
