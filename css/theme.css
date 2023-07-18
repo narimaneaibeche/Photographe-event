@@ -564,7 +564,7 @@ figure{
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     
     
   }
@@ -678,12 +678,51 @@ figure{
   }
   @media screen and (max-width: 912px){
 
-    .card-link {
+    .card2-img .card-link,
+    .pub-list .card-link {
       width: 66vh;
-      /*height: 57vw;*/
+      height: 59vw;
+    }
+    .card-img {
+      width: 152vh;
+  }
+    #image-lightbox{
+      height: auto;
+    }
+    .info-lightbox {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+  
+    }
+    .inputs {
+      display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     padding-bottom: 2vw;
+     margin-left: 12vw;
+     }
+     .input-tax{
+      display: flex;
+      flex-direction: column;
+     }
+     .trier{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+     }
+     .input-categorie,.input-format,.input-trier{
+      margin-bottom: 4vw;
+     }
+     .hover-title-cat {
+      margin-top: 24vh;
+    }
+    .card2-img .hover-title-cat,
+    .pub-list .hover-title-cat {
+      margin-top: 13vh;
     }
     
-
 
   }
   @media screen and (max-width: 830px){
@@ -694,25 +733,11 @@ figure{
       width: 66vh;
       /*height: 57vw; */
   }
-  .inputs {
-    display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   padding-bottom: 2vw;
-   margin-left: 12vw;
-   }
-   .input-tax{
-    display: flex;
-    flex-direction: column;
-   }
-   .trier{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-   }
-   .input-categorie,.input-format,.input-trier{
-    margin-bottom: 4vw;
-   }
+  
+   .hover-title-cat {
+    margin-top: 22vh;
+  }
+  
   }
   /* les media querie mobile */
   @media screen and (max-width: 600px){
@@ -777,9 +802,18 @@ figure{
     margin-top: 2vh;
     z-index: -1;
    }
-   .card-link{
+  .card-link{
     width: 75vw;
     height: 57vw;
+   }
+   .card2-img .card-link,
+   .pub-list .card-link{
+    width: 75vw;
+    height: 57vw;
+   }
+   .card2-img .hover-title-cat, 
+   .pub-list .hover-title-cat {
+    margin-top: 3vh;
    }
    .permalink {
     margin-top: 30%;

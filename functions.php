@@ -228,15 +228,15 @@ function weichie_load_more() {
 <div class="lightbox" id="lightbox">
   <?php $query = new WP_Query($args); ?>
   <?php  while ($query->have_posts()) : $query->the_post();?>
-  <div class="lightbox__container 1">
-      <div id="image-lightbox1">
+  <div class="lightbox__container ">
+      <div id="image-lightbox">
 		 <?php the_content()?>
      </div>
      <div class="info-lightbox">
          <p id="cat-light"> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>                 
          <h4 id="reff-light" ><?php the_field('référence'); ?></h4> 
-	     <button class="lightbox__next 1" >  &#x2190 Précédente</button>  
-	     <button class="lightbox__prev 1"> Suivante &#x2192</button>             
+	     <button class="lightbox__next" >  &#x2190 Précédente</button>  
+	     <button class="lightbox__prev"> Suivante &#x2192</button>             
      </div>
   </div>
   <button class="lightbox__close" id="close-lightbox">&times;</button>	   
