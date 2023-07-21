@@ -4,12 +4,13 @@ $(document).ready(function(){
   
   $(document).on('click', ".plein-ecran", function (e) {
     e.preventDefault();
-    $("#lightbox").show();
+    $("#lightbox").show('4');
     
    // l'affichage de l'image
     var urlImage = $(this).parent().parent().children().children().children().attr("src");
     var real_img='<img src="'+urlImage+'" alt="photo event">';
     $('#image-lightbox').html(real_img);
+    
    
     // l'affichage de la catégorie
      var categorie = $(this).siblings().children().next().find("p").children().attr("href");
@@ -25,9 +26,9 @@ $(document).ready(function(){
 
     //début de pagination
     let indice = $(this).parent().parent().index();
-    console.log('indice',(indice/2));
+    console.log('indice',(indice));
 
-    let slideIndex = indice/2; 
+    let slideIndex = indice; 
     showSlides(slideIndex);
 
     // afficher le slide 
@@ -54,10 +55,10 @@ $(document).ready(function(){
       // Afficher la slide demandée
       slides[slideIndex ].style.display = 'block';
     }
-    $(document).on('click', ".lightbox__next", function () {
+    $(document).on('click', ".lightbox__next,.lightbox__next1", function () {
       plusSlides(-1);
     });
-    $(document).on('click', ".lightbox__prev", function () {
+    $(document).on('click', ".lightbox__prev,.lightbox__prev1", function () {
       plusSlides(1);
    });
 
@@ -68,7 +69,7 @@ $(document).ready(function(){
  // afficher la lightbox dans la page de détaille
 
   $(document).on('click', "#plein-ecran-1", function () {
-    $("#lightbox").show();
+    $("#lightbox").show('4');
     
     // l'affichage de l'image
     var urlImage = $(this).parent().parent().children().children().children().attr("src");
@@ -100,7 +101,6 @@ $(document).ready(function(){
 
    function showSlides(n) {
      let slides = document.getElementsByClassName('lightbox__container');
-     console.log(slides);
      if(n > (slides.length)-1) { 
       slideIndex = 0 ;
      }
@@ -115,10 +115,10 @@ $(document).ready(function(){
      // Afficher la slide demandée
      slides[slideIndex].style.display = 'block';
    }
-   $(document).on('click', ".lightbox__next", function () {
+   $(document).on('click', ".lightbox__next,.lightbox__next1", function () {
      plusSlides(-1);
    });
-   $(document).on('click', ".lightbox__prev", function () {
+   $(document).on('click', ".lightbox__prev,.lightbox__prev1", function () {
      plusSlides(1);
   });
 
@@ -129,7 +129,7 @@ $(document).ready(function(){
 
 $(document).on('click', ".lightbox__close", function (e) {
 
-  $(".lightbox").hide();  
+  $(".lightbox").hide('4');  
 });
 
 })

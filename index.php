@@ -7,7 +7,7 @@
           <img src="<?php echo get_template_directory_uri() . '/assets/Titre header.png'; ?> " class="img-event"  alt="photographe event" > 
       </div>
       <div class="banner">
-           <img src="<?php echo get_template_directory_uri() . '/assets/nathalie-1.jpeg'; ?> " class="hero-event"  alt="image photograpie" > 
+           <img src="<?php echo get_template_directory_uri() . '/assets/nathalie-1.jpg'; ?> " class="hero-event" alt="image photograpie" > 
       </div>
   </div>
 

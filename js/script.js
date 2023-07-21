@@ -109,21 +109,23 @@ $('#btn4').on('click', function() {
   });
 });
 
-// lightbox  de filtre
 
-$(document).on('click', ".plein-ecran", function (e) {
-  e.preventDefault();
-  let numero = $(this).parent().parent().index();
-    console.log('numero de slide',(numero/2));
-let slidesss = document.getElementsByClassName('lightbox__container 1');
-console.log('slides filtre',slidesss.length);
+
+
+/*
+$(document).ready(function(){
+  $(document).on('click', ".image-lightbox", function () {
+    var size=($(this).height())
+  console.log(size);
+  if (size >400){
+    $('.lightbox__next1,.lightbox__prev1').css({
+        "top": "50%"
+    });
+  }else {
+    $('.lightbox__next1,.lightbox__prev1').css({
+      "top": "37%"
+    }); 
+  }
+});
 })
-
-$(document).on('click', ".plein-ecran", function (e) {
-  e.preventDefault();
-
-  let numero = $(this).parent().parent().index();
-    console.log('numero de slide DETAILLE',(numero/2));
-let slidesss = document.getElementsByClassName('lightbox__container 2');
-console.log('slides filtre DETAILL',slidesss.length);
-})
+*/

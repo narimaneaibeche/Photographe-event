@@ -256,13 +256,14 @@ span textarea{
     border: 1px solid #B8BBC2;
     border-radius: 0.2vh;
     cursor: pointer;
-    
-    transition: all 1s ease-out;   
+    transition: all 1s ease-out;  
+    transition-duration: 1000ms; 
 }
 .card-contact button:hover{
     color: white;
     background-color: black;
     font-weight: 900;
+    transform: scale(1.1);
 }
 .row-card1{
     border-bottom-style: solid; 
@@ -322,7 +323,8 @@ span textarea{
    position: relative;
    height: 57vh;
    margin-bottom: 2vw;
-  }  
+  } 
+
 
 .card-figure-hover-link{
   width: 100%;
@@ -388,13 +390,15 @@ span textarea{
     margin-bottom: 6vh;
     border: 1px solid #B8BBC2;
     margin: auto;
-    transition: all 1s ease-out;   
+    transition: all 1s ease-out;  
+    transition-duration: 1000ms;  
 }
 #btn3:hover{
   color: white ;
     background-color: black;
     font-weight: 900;  
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .row-card2-photo{
@@ -470,11 +474,13 @@ figure{
     margin: auto;
     transition: all 1s ease-out;  
     cursor: pointer; 
+    transition-duration: 1000ms;
 }
 #btn4:hover{
     color: white;
     background-color: black;
     font-weight: 900;
+    transform: scale(1.15);
     
 }
 
@@ -605,6 +611,7 @@ figure{
     max-width: 100%;
     max-height: 100%;
   }
+  
   
   .lightbox__close{
     border: none;
@@ -741,6 +748,9 @@ figure{
   }
   /* les media querie mobile */
   @media screen and (max-width: 600px){
+    #wp-toolbar{
+      display: none;
+    }
     .site-header{
         display: block;
     }
@@ -811,8 +821,7 @@ figure{
     width: 75vw;
     height: 57vw;
    }
-   .card2-img .hover-title-cat, 
-   .pub-list .hover-title-cat {
+   .card2-img .hover-title-cat {
     margin-top: 3vh;
    }
    .permalink {
@@ -849,67 +858,71 @@ figure{
     margin-top: 25vh;
   }
   
-  .lightbox__next1{
-    display: block;
-    border: none;
-    /*position: fixed;*/
-    top: 50%;
-    margin-left: -9vw;
-    margin-top: -14px;
-    z-index: 11;
-    font-size: 20px;
-    left: 5px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.9);
-    
-  }
+  .lightbox__next1,
   .lightbox__prev1{
     display: block;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.848); 
     border: none;
-   /* position: fixed;*/
-   margin-right: -9vw;
-    top: 50%;
+    position: fixed;
+    top: 40%;
     margin-top: -14px;
     z-index: 11;
-    font-size: 20px;
-    right: 5px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 15px;
+    opacity: .5;
+    right: 0px;
+    cursor: pointer;
+    transition: opacity .3s;
+  }
+  .lightbox__next1{
+    right: auto;
+    left: 0px;
+  }
+  .lightbox__next1 a,
+  .lightbox__prev1 a{
+    color: #FFFFFF;
+  }
+
+  .lightbox__next1:hover,
+  .lightbox__prev1:hover{
+    opacity: 1;
   }
   
   .lightbox__next,
   .lightbox__prev{
-  font-size: 10px;
+  display: none;
   }
+ 
   
 
-   #btn3{
+  #btn3{
     width: 65vw;
     height: 50px;
-   }
+  }
   
-   .h-plus {
+  .h-plus {
     margin-bottom: 2vh;
     font-size: 18px;
-   }
-   footer ul {
+  }
+  footer ul {
     display: flex;
     list-style-type: none;
     flex-direction: column;
     align-items: flex-start;
-   }
-   footer li{
+    font-size: 14px;
+  }
+  footer li{
     margin-bottom: 2vh;
-   }
-   .modal-content {
+  }
+  .modal-content {
     width: 85vw;
    }
-   .contact{
+  .contact{
     width: 85vw;
-   }
-   span textarea {
+  }
+  span textarea {
     width: 75vw;
-   }
+  }
    form span input{
     width: 75vw;
    }
@@ -993,7 +1006,7 @@ figure{
   
 
 }
-@media screen and (max-width: 530px){
+@media screen and (max-width: 540px){
 .hover-title-cat{
   margin-top: 3vh;
   }

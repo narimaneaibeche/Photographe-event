@@ -1,19 +1,13 @@
 
 <?php 
 
-/*function montheme_supports(){
+function montheme_supports(){
 
-   add_theme_support('title-tag');
-   
-   add_theme_support('post-thumbnails');
-   add_theme_support('menus');
-   register_nav_menu('header', 'En tête de menu');
-   register_nav_menu('footer','pied de page');
-   add_image_size('post-thumbnail', 564, 495, false);
+   add_image_size('post-thumbnail', false);
    
 }
-add_action( 'after_setup_theme', 'montheme_supports' );
-*/
+
+
 wp_enqueue_script('jquery' );
 
 function capitaine_register_assets() {
@@ -225,23 +219,7 @@ function weichie_load_more() {
 	   <?php
         endif;
 ?>
-<div class="lightbox" id="lightbox">
-  <?php $query = new WP_Query($args); ?>
-  <?php  while ($query->have_posts()) : $query->the_post();?>
-  <div class="lightbox__container ">
-      <div id="image-lightbox">
-		 <?php the_content()?>
-     </div>
-     <div class="info-lightbox">
-         <p id="cat-light"> <?php echo get_the_term_list(get_the_ID(),'catégorie',);?></p>                 
-         <h4 id="reff-light" ><?php the_field('référence'); ?></h4> 
-	     <button class="lightbox__next" >  &#x2190 Précédente</button>  
-	     <button class="lightbox__prev"> Suivante &#x2192</button>             
-     </div>
-  </div>
-  <button class="lightbox__close" id="close-lightbox">&times;</button>	   
-  <?php endwhile; ?>
-</div>
+<?php include (TEMPLATEPATH . "/templates_parts/lightbox_filtre.php"); ?> 
 <?php wp_reset_postdata(); ?>
 <?php
     die();
