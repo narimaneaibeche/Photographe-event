@@ -300,11 +300,21 @@ span textarea{
    position: relative;
    height: 57vh;
    margin-bottom: 2vw;
-   -webkit-animation-name: animatetop;
+   -webkit-animation-name: anima;
    -webkit-animation-duration: 1.5s;
-   animation-name: animatetop;
+   animation-name: anima;
    animation-duration: 1.5s;
   } 
+
+  @-webkit-keyframes anima {
+    from {top:5vh; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes anima {
+    from {top:5vh; opacity:0}
+    to {top:0; opacity:1}
+}
 .card-figure-hover-link{
   width: 100%;
  height: 100%;
