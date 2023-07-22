@@ -2,11 +2,8 @@
 <?php 
 
 function montheme_supports(){
-
-   add_image_size('post-thumbnail', false);
-   
+   add_image_size('post-thumbnail', false); 
 }
-
 
 wp_enqueue_script('jquery' );
 
@@ -14,14 +11,10 @@ function capitaine_register_assets() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     // Chargement du css/theme.css pour nos personnalisations
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
-
-
-// Chargement du js/script.js pour nos personnalisations
-
-wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true);
-
-// Chargement du js/lightbox.js pour nos personnalisations
-wp_enqueue_script( 'diaporama', get_stylesheet_directory_uri(). '/js/lightbox.js', array( 'jquery' ), '1.0', true);
+    // Chargement du js/script.js pour nos personnalisations   
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true);
+    // Chargement du js/lightbox.js pour nos personnalisations
+    wp_enqueue_script( 'diaporama', get_stylesheet_directory_uri(). '/js/lightbox.js', array( 'jquery' ), '1.0', true);
 }
 add_action( 'wp_footer', 'capitaine_register_assets' );
 

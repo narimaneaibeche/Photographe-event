@@ -101,9 +101,7 @@
        
          
          <?php include (TEMPLATEPATH . "/templates_parts/photo_block.php"); ?>
-        
-
-         
+           
     </div>
  </div>
  
@@ -116,9 +114,8 @@
         return $term->term_id;
         }, get_the_terms(get_post(), 'catégorie'));
         $query = new WP_Query([ 
-        // 'post__not_in' => [get_the_ID()],
         'post_type' => 'photo',
-        'posts_per_page' => 12,
+        'posts_per_page' => -1,
         'orderby'=> 'date',
         'order'=> 'DESC',
          'paged' => 1,

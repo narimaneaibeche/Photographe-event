@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Photographe-event professionnel, pour tous vous photos de mariage réception concert, télévision avec photographie et photo de qualité."/>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <title>Photographe-event</title>
-    
-
-    
-    <?php wp_head() ?>
-   
-    
-    
+    <?php wp_head() ?>  
 </head>
 <body>
     <!-- header pour ordinateur-->
-      <header class="header-ordinateur">
+    <header class="header-ordinateur">
           <nav id="navigation">
                 <?php
                    wp_nav_menu(
@@ -30,10 +23,9 @@
                 ?>
             </nav>
          <a href="http://localhost:8888/photographe-event/"><img src="<?php echo get_template_directory_uri() . '/assets/logo.png'; ?> " class="logo"  alt="logo" ></a>   
-      </header>
+     </header>
+
       <!-- header pour mobile-->
-
-
     <header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
 

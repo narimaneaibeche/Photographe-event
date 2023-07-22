@@ -47,17 +47,13 @@ header{
     height: 10vh;
     width: auto;
     box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
-   
 }
 .site-header{
     display: none;
 }
-
 header a img{
     margin-left: 11vh;
 }
-
-
 /*le menu*/
 
 #navigation{
@@ -157,20 +153,17 @@ footer{
     margin-top: 2vh;
     width: 62vh;
 }
-
 .modal-body {
     display: flex;
     justify-content: center;
     padding-top: 2vh;
 }
-
 span input{
     border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
     height: 4vh;
     width: 31vh;
 }
-
 span textarea{
     border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
@@ -186,28 +179,22 @@ span textarea{
     border: 1px solid #B8BBC2;
     font-family: 'Space Mono';
 }
-
 /* single page */
-
 .card{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: flex-end;
-   
+    align-items: flex-end; 
 }
 .card-img{
     width: 102vh;
-  
 }
 .card-figure{
     width: 100%;
     position: relative;
     margin-top: 5vh;
 }
-
 .card-figure-hover{
- 
  width: 100%;
  height: 100%;
  top:0;
@@ -220,18 +207,12 @@ span textarea{
  flex-direction: column;
  opacity: 0;
  transition: 0.6s;
- 
-
 }
 .card-figure-hover:hover{
   opacity: 1;
 }
-
-
 .card-txt{
-   
-    width: 100vh;
-    
+ width: 100vh;
  }
 .card-txt p {
     border-bottom-style: solid; 
@@ -244,8 +225,7 @@ span textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6vh;
-   
+    margin-bottom: 6vh;  
 }
 .card-contact button {
     height: 6vh;
@@ -303,8 +283,7 @@ span textarea{
 }
 #nav-img1{
     width: 9vh;
-    height: 8vh;
-   
+    height: 8vh; 
 }
 #nav-img2{
   width: 9vh;
@@ -312,10 +291,8 @@ span textarea{
   display: none; 
 }
 #fleche-ss, #fleche-pp{
-    font-size: 25px;
-    
+    font-size: 25px;  
 }
- 
 /*la suite des photo*/
 .card-link {
     width: 62vh;
@@ -323,9 +300,11 @@ span textarea{
    position: relative;
    height: 57vh;
    margin-bottom: 2vw;
+   -webkit-animation-name: animatetop;
+   -webkit-animation-duration: 1.5s;
+   animation-name: animatetop;
+   animation-duration: 1.5s;
   } 
-
-
 .card-figure-hover-link{
   width: 100%;
  height: 100%;
@@ -351,7 +330,6 @@ span textarea{
   margin-top: 43%;
   margin-left: 45%;
   margin-right: 45%;
-  
 }
 .card-link figure{
   height: 100%;
@@ -364,22 +342,18 @@ span textarea{
   margin-left: 1vw;
   margin-right: 1vw;
   margin-top: 140px;
-
 }
 .hover-title-cat p a{
   color: #FFFFFF !important;
- 
 }
 .card-figure-hover-link h3 {
   color: #FFFFFF;
 }
-
 .card2-img{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; 
 }
-
 #btn3 {
     width:28vh;
     height:6vh;
@@ -400,7 +374,6 @@ span textarea{
     cursor: pointer;
     transform: scale(1.1);
 }
-
 .row-card2-photo{
     display: flex;
     flex-direction: column;
@@ -424,7 +397,7 @@ figure{
     display: block;
 }
 
-  /* page d'accueil */
+/* page d'accueil */
   .main{
     width: 100%;
   }
@@ -480,10 +453,8 @@ figure{
     color: white;
     background-color: black;
     font-weight: 900;
-    transform: scale(1.15);
-    
+    transform: scale(1.15);  
 }
-
 .suite-liste{
     margin-left: 11vh;
     margin-right: 11vh;
@@ -493,7 +464,6 @@ figure{
     flex-direction: column;
     align-items: center;
     margin-top: 2vh;
-
   }
   /*input de la page d'accueil*/
   .input-categorie select,
@@ -502,8 +472,7 @@ figure{
     border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
     height: 4vh;
-    width: 27vh;
-    
+    width: 27vh; 
   }
   .input-tax{ 
     display: flex;
@@ -562,7 +531,6 @@ figure{
   .lightbox__prev1{
   display: none;
   }
-
   .info-lightbox{
     color: #FFFFFF;
     margin-top: -14px;
@@ -579,7 +547,6 @@ figure{
     color: #FFFFFF;
     
   }
-  
   .lightbox__next{
     right: auto;
     left: 0px;
@@ -611,8 +578,6 @@ figure{
     max-width: 100%;
     max-height: 100%;
   }
-  
-  
   .lightbox__close{
     border: none;
     position: fixed;
@@ -636,16 +601,12 @@ figure{
   #reff-lightbox{
     display: none;
   }
- 
   @keyframes lightboxIn{
     from {opacity: 0;}
     to{opacity: 1;}
     
   }
   
-
-
-
 
 
 
@@ -680,8 +641,6 @@ figure{
     .hover-title-cat {
       margin-top: 9vh;
     }
-
-   
   }
   @media screen and (max-width: 912px){
 
@@ -701,7 +660,6 @@ figure{
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
-  
     }
     .inputs {
       display: flex;
@@ -729,8 +687,6 @@ figure{
     .pub-list .hover-title-cat {
       margin-top: 13vh;
     }
-    
-
   }
   @media screen and (max-width: 830px){
     H2{
@@ -740,11 +696,9 @@ figure{
       width: 66vh;
       /*height: 57vw; */
   }
-  
    .hover-title-cat {
     margin-top: 22vh;
   }
-  
   }
   /* les media querie mobile */
   @media screen and (max-width: 600px){
@@ -778,14 +732,12 @@ figure{
    p{
     font-size: 14px;
     line-height: 21px;
-    
    }
    .card-contact{
     width: 75vw;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    
+    align-items: flex-start; 
    }
    .cnt{
     width: 75vw;
@@ -821,29 +773,33 @@ figure{
     width: 75vw;
     height: 57vw;
    }
-   .card2-img .hover-title-cat {
+   .card2-img .hover-title-cat,
+   .pub-list .hover-title-cat {
     margin-top: 3vh;
    }
    .permalink {
     margin-top: 30%;
    }
    .permalink img{
-    width: 30px;
-    height: 30px;
+    height: 10vw;
    }
    .hover-title-cat p,
    .hover-title-cat h3{
     font-size: 10px;
    }
    .plein-ecran{
-    width: 20px;
-    height: 20px;
+    width: 6vw;
+    height: 6vw;
    }
+   .plein-ecran-1{
+    width: 11vw;
    
+   }
+   /*
    .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
     margin: none;
     width: 100%;
-   }
+   }*/
  
  
   #image-lightbox {
@@ -857,7 +813,6 @@ figure{
     margin-right: 7vh;
     margin-top: 25vh;
   }
-  
   .lightbox__next1,
   .lightbox__prev1{
     display: block;
@@ -887,19 +842,14 @@ figure{
   .lightbox__prev1:hover{
     opacity: 1;
   }
-  
   .lightbox__next,
   .lightbox__prev{
   display: none;
   }
- 
-  
-
   #btn3{
     width: 65vw;
     height: 50px;
   }
-  
   .h-plus {
     margin-bottom: 2vh;
     font-size: 18px;
@@ -928,11 +878,7 @@ figure{
    }
    .modal-body {
     margin-right: 6vw;
-
    }
-   
-   
-
    /* Menu Burgere */
 
   .main-navigation{
@@ -1003,8 +949,6 @@ figure{
     display: block;
     border: none !important;
   }
-  
-
 }
 @media screen and (max-width: 540px){
 .hover-title-cat{
@@ -1019,6 +963,5 @@ figure{
     margin-bottom: 2vh;
     font-size: 12px;
    }
-
 }
     

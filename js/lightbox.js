@@ -70,6 +70,8 @@ $(document).ready(function(){
 
   $(document).on('click', "#plein-ecran-1", function () {
     $("#lightbox").show('4');
+    let indicee= $(this).parent().parent().parent().index();
+    console.log('indice détaille',(indicee));
     
     // l'affichage de l'image
     var urlImage = $(this).parent().parent().children().children().children().attr("src");
@@ -90,7 +92,7 @@ $(document).ready(function(){
 
    //début de pagination
 
-   let slideIndex = 0; 
+   let slideIndex = indicee; 
    showSlides(slideIndex);
 
    // afficher le slide 
@@ -101,11 +103,11 @@ $(document).ready(function(){
 
    function showSlides(n) {
      let slides = document.getElementsByClassName('lightbox__container');
-     if(n > (slides.length)-1) { 
+     if(n > (slides.length)) { 
       slideIndex = 0 ;
      }
      if(n < 0 ) { 
-       slideIndex = (slides.length)-1 
+       slideIndex = (slides.length);
      }
     // Cacher toutes les slides
      for(let i = 0; i < slides.length; i++) {

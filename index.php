@@ -10,6 +10,7 @@
            <img src="<?php echo get_template_directory_uri() . '/assets/nathalie-1.jpg'; ?> " class="hero-event" alt="image photograpie" > 
       </div>
   </div>
+<!-- select catégorie -->
 
 <div class="cc">
    <div class="inputs">
@@ -30,6 +31,7 @@
            </select>  
        </div>
 
+<!-- select format -->
 
         <div class="input-format">
         <?php $format = get_terms( 'format' );?>
@@ -45,18 +47,20 @@
            </select>  
         </div>
       </div>
+<!-- select date -->
 
       <div class="trier">
          <div class="input-trier">
          <?php $date = get_terms( 'date' );?>
            <select name="sort" id="trier-select" >
              <option value="0">TRIER PAR</option>
-             <option value="date-desc">Les Plus Anciennes</option>
-             <option value="date-asc">Les Plus Récentes</option>
+             <option value="date-desc">Les plus Récentes</option>
+             <option value="date-asc">Les Plus Anciennes</option>
            </select>  
         </div>
       </div>
    </div>
+
  <!-- affichage des photos -->
  <div class="liste">
       <div class="liste-photos">
