@@ -109,23 +109,3 @@ $('#btn4').on('click', function() {
   });
 });
 
-
-
-
-/*
-$(document).ready(function(){
-  $(document).on('click', ".image-lightbox", function () {
-    var size=($(this).height())
-  console.log(size);
-  if (size >400){
-    $('.lightbox__next1,.lightbox__prev1').css({
-        "top": "50%"
-    });
-  }else {
-    $('.lightbox__next1,.lightbox__prev1').css({
-      "top": "37%"
-    }); 
-  }
-});
-})
-*/
