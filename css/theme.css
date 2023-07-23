@@ -95,6 +95,22 @@ footer{
     cursor: pointer;
 }
 /* modal */
+.wpcf7 form .wpcf7-response-output {
+   border: none;
+   color: #E00000;
+   font-size: 12px;   
+}
+
+.wpcf7-not-valid-tip {
+  font-size: 12px;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color:none;
+ 
+  font-size: 12px;
+  color: #000000;
+ 
+}
 .modal {
     display: none; 
     position: fixed;
@@ -167,17 +183,19 @@ span input{
 span textarea{
     border-radius: 0.8vh;
     border: 1px solid #B8BBC2;
+    width: 31vh;
 }
 #wpcf7-f5-o1{
     padding-left: 2vh;
     padding-top: 2vh;
 }
  input[type="submit"] {
-    width: 100%;
-    height: 6vh;
+  width: 31vh;
+    height: 5vh;
     border-radius: 0.20vh;
     border: 1px solid #B8BBC2;
     font-family: 'Space Mono';
+    cursor: pointer;
 }
 /* single page */
 .card{
@@ -805,12 +823,6 @@ figure{
     width: 11vw;
    
    }
-   /*
-   .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
-    margin: none;
-    width: 100%;
-   }*/
- 
  
   #image-lightbox {
     height: auto;
@@ -880,12 +892,15 @@ figure{
   .contact{
     width: 85vw;
   }
-  span textarea {
+  span textarea, 
+  form span input,
+  input[type="submit"] {
     width: 75vw;
   }
-   form span input{
-    width: 75vw;
-   }
+  .wpcf7 form .wpcf7-response-output {
+    margin-top: -11vw;
+    margin-bottom: 22vw;
+}
    .modal-body {
     margin-right: 6vw;
    }
