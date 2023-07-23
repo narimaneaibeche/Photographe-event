@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-
+<!-- afficher le hero de la page d'acceuil -->
 <div class="main">
    <div class="hero">
       <div class="img-banner">

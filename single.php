@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<!-- Afficher l'image et ces informations  -->
 <?php
    if (have_posts()):  ?>
 <div class='container'>
@@ -28,7 +28,7 @@
                   ANNÉE : <?php the_date('Y');?> </br>
                </p>  
             </div>
-            
+          <!-- pour Afficher la fenetre de contact -->  
          </div> 
          <div class="card-contact">
             <div class="cnt">
@@ -72,7 +72,7 @@
         </div>   
     </div>
  
-   
+   <!-- Afficher les images de la même catégorie -->
  <div class="row-card2">
     <h3 class="h-plus">VOUS AIMEREZ AUSSI </h3>
 <div class="row-card2-photo">
@@ -105,7 +105,7 @@
     </div>
  </div>
  
- <!-- afficher plus des photo -->
+ <!-- afficher plus des images -->
    <button id="btn3" class="card-link-suite">Toutes les photos </button>
    <div id="publication-list">
       <div  class="pub-list">

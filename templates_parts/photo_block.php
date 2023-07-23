@@ -1,9 +1,7 @@
 
          <?php
-      
             while ($query->have_posts()) : $query->the_post();
          ?>
-            
                <div class="card-link">
               
                <?php the_content()?>

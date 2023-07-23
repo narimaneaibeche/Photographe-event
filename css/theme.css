@@ -927,7 +927,21 @@ figure{
     background-color: #E00000;
     height: 72em;
     margin-top: -10px;
+    -webkit-animation-name: anima;
+    -webkit-animation-duration: 1.5s;
+    animation-name: animaa;
+    animation-duration: 1.5s;
   }
+
+  @-webkit-keyframes animaa {
+    from {top:-15vh; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animaa {
+    from {top:-15vh; opacity:0}
+    to {top:0; opacity:1}
+}
   .site-header {
     position: sticky;
     top: 0;

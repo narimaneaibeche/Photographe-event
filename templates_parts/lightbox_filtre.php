@@ -1,4 +1,4 @@
-
+<!-- afficher la lightbox pour la partie des filtre -->
   <div class="lightbox" id="lightbox">
   <?php  while ($query->have_posts()) : $query->the_post();?>
   

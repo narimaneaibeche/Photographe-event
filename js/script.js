@@ -90,7 +90,7 @@ closeBtn.addEventListener("click", () => {
 
 let currentPage = 1;
 $('#btn4').on('click', function() {
-  currentPage++; // Do currentPage + 1, because we want to load the next page
+  currentPage++; 
 
   $.ajax({
     type: 'POST',
