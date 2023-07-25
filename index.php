@@ -54,7 +54,7 @@
          <?php $date = get_terms( 'date' );?>
            <select name="sort" id="trier-select" >
              <option value="0">TRIER PAR</option>
-             <option value="date-desc">Les plus Récentes</option>
+             <option value="date-desc">Les Plus Récentes</option>
              <option value="date-asc">Les Plus Anciennes</option>
            </select>  
         </div>
